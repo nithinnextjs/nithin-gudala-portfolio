@@ -31,16 +31,11 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      tab: null,
-    }),
-  }
-</script>
-
-<script>
 export default {
   name: 'HelloWorld',
+   data: () => ({
+      tab: null,
+    }),
   props: {
     msg: String
   }
