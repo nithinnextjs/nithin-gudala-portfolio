@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>Hello this is nithin gudala</h1>
+    <h1>Hello, Welcome to my Profile, this is nithin gudala</h1>
   </div>
 </template>
 
