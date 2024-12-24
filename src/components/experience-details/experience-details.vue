@@ -45,7 +45,7 @@
 import Modal from '@/components/modelDetails.vue';
 
 export default {
-  name: "AboutDetails",
+  name: "ExperienceDetails",
   components: {
     Modal,
   },
