@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- Navigation Component -->
+    <AppNavigation />
+
+    <main class="p-4">
+      <router-view />
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center">
+      <p>&copy; 2024 My Vue App</p>
+    </footer>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppNavigation from '@/components/nav-bar/AppNavigation.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppNavigation
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped lang="scss">
+footer {
+  background-color: #2d3748; /* Tailwind gray-800 */
 }
 </style>
