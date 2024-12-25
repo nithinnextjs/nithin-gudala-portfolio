@@ -3,7 +3,7 @@
     <!-- Navigation Component -->
     <AppNavigation />
 
-    <main class="p-4">
+    <main class="">
       <router-view />
     </main>
 
