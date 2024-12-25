@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <!-- Navbar Brand with Logo -->
       <a class="navbar-brand" href="#">
-        <img src="@/assets/nithin_logo.jpg" alt="Logo" class="logo" />
+        <img src="@/assets/NithinGudala_logo.png" alt="Logo" class="logo" />
       </a>
 
       <!-- Navbar Toggle Button (for mobile) -->
@@ -32,26 +32,32 @@
             <router-link to="/contact" class="nav-link">Contact</router-link>
           </li>
           <li class="nav-item">
-           <router-link to="/Resume" class="nav-link">Resume</router-link>
+            <router-link to="/Resume" class="nav-link">Resume</router-link>
           </li>
           <li class="nav-item">
-           <router-link to="/education" class="nav-link">Education</router-link>
+            <router-link to="/education" class="nav-link">Education</router-link>
           </li>
           <li class="nav-item">
-          <router-link to="/experience" class="nav-link">Experiences</router-link>
+            <router-link to="/experience" class="nav-link">Experiences</router-link>
           </li>
         </ul>
       </div>
 
-      <!-- Resume Download Button -->
-      <a href="/download" class="btn btn-logo ms-3">
-        <i class="fas fa-file-pdf me-2"></i> Resume Download
-      </a>
+      <div class="d-flex align-items-center">
 
-      <!-- LinkedIn Button -->
-      <a href="https://www.linkedin.com/in/nithin-gudala/" class="btn btn-linkedin ms-3" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-linkedin me-2"></i> LinkedIn
-      </a>
+        <!-- Resume Download Button -->
+        <button class="btn btn-logo ms-3" @click="downloadResume">
+          <i class="fas fa-file-pdf me-2"></i> Resume Download
+        </button>
+
+        <!-- LinkedIn Button -->
+        <a href="https://www.linkedin.com/in/nithin-gudala-8946a0230/" 
+           class="btn btn-linkedin ms-3" 
+           target="_blank" 
+           rel="noopener noreferrer">
+          <i class="fab fa-linkedin me-2"></i> LinkedIn
+        </a>
+      </div>
     </div>
   </nav>
 </template>
@@ -59,7 +65,30 @@
 <script>
 export default {
   name: 'AppNavigation',
-};
+  data() {
+    return {
+      selectedFormat: 'pdf',  // Default format
+    };
+  },
+  methods: {
+   downloadResume() {
+    // Correct the file URL handling
+    let fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx');  // Use 'require' to get the asset
+    fileUrl = fileUrl.default || fileUrl;  // Access the URL string (in case of Webpack's object structure)
+    this.triggerDownload(fileUrl);
+  },
+
+  triggerDownload(fileUrl) {
+    // Create an anchor element to trigger the download
+    const a = document.createElement('a');
+    a.href = fileUrl;
+    a.download = fileUrl.split('/').pop();  // Extract the file name from the URL
+    document.body.appendChild(a);  // Append anchor to DOM
+    a.click();  // Simulate the click to trigger the download
+    document.body.removeChild(a);  // Clean up by removing the anchor element
+  }
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -127,4 +156,3 @@ nav {
   }
 }
 </style>
-

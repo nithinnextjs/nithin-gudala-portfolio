@@ -6,5 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Optionally, import Bootstrap JS (if needed for components like modals, tooltips, etc.)
 import 'bootstrap';
+// Import Font Awesome CSS
+import '@fortawesome/fontawesome-free/css/all.css'
 
 createApp(App).use(router).mount('#app'); // Create the Vue app, use the router, and mount it to the DOM

@@ -1,154 +1,136 @@
 <template>
-  <div>
-    <!-- Section 1 - Background Image with Text -->
-    <section id="section-one" class="bg-cover bg-center h-screen flex justify-center items-center text-center text-white relative" :style="{ backgroundImage: 'url(' + backgroundImage + ')' }">
-      <div class="overlay-text bg-black bg-opacity-50 p-6 rounded-lg">
-        <h1 class="text-4xl font-bold">Nithin Gudala</h1>
-        <p class="text-xl">Software Developer</p>
-        <p class="text-lg">Experience: 10 Years</p>
-      </div>
-    </section>
+  <div id="app">
+    <!-- Main content of the page -->
+    <section :style="backgroundStyle" class="my-section">
+      <div class="banner-section">
+    <div class="overlay"></div> <!-- Light black overlay -->
 
-    <!-- Section 2 - Skills Slider -->
-    <section class="skills-carousel py-10 bg-gray-100">
-      <div class="container mx-auto">
-        <h2 class="text-center text-3xl mb-4">My Skills</h2>
-
-        <div id="skillsSlider" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row justify-content-center">
-                <!-- HTML5 -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-html5 skill-icon"></i>
-                  <p>HTML5</p>
-                </div>
-                <!-- CSS3 -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-css3-alt skill-icon"></i>
-                  <p>CSS3</p>
-                </div>
-                <!-- Bootstrap 4 -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-bootstrap skill-icon"></i>
-                  <p>Bootstrap 4</p>
-                </div>
-                <!-- Bootstrap 5 -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-bootstrap skill-icon"></i>
-                  <p>Bootstrap 5</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row justify-content-center">
-                <!-- Tailwind CSS -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fas fa-tachometer-alt skill-icon"></i>
-                  <p>Tailwind CSS</p>
-                </div>
-                <!-- Material UI -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-react skill-icon"></i>
-                  <p>Material UI</p>
-                </div>
-                <!-- JavaScript -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-js skill-icon"></i>
-                  <p>JavaScript</p>
-                </div>
-                <!-- Java -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-java skill-icon"></i>
-                  <p>Java</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row justify-content-center">
-                <!-- Node.js -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-node skill-icon"></i>
-                  <p>Node.js</p>
-                </div>
-                <!-- React.js -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-react skill-icon"></i>
-                  <p>React.js</p>
-                </div>
-                <!-- Angular.js -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fab fa-angular skill-icon"></i>
-                  <p>Angular.js</p>
-                </div>
-                <!-- MongoDB -->
-                <div class="col-4 col-md-2 text-center">
-                  <i class="fas fa-database skill-icon"></i>
-                  <p>MongoDB</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#skillsSlider" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#skillsSlider" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+    <div class="content">
+      <!-- Left Side: Card with text -->
+      <div class="text-card">
+        <h1>Nithin Gudala</h1>
+        <p>Full Stack Developer</p>
       </div>
+
+      <!-- Right Side: Circular Image -->
+      <div class="image-container">
+        <img src="@/assets/nithin_gudala_profile_pic.jpg" alt="Profile Picture" class="circular-image"> <!-- Replace with your image -->
+      </div>
+    </div>
+  </div>
     </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeProfile",
+  name: 'HomeProfile',
   data() {
     return {
-      backgroundImage: "https://your-image-url.jpg", // Replace with your image URL
+      // Dynamically require the image from the assets directory
+      backgroundImageUrl: require('@/assets/section_one_ng.jpg')
     };
   },
+  computed: {
+    // Computed property to handle background styling dynamically
+    backgroundStyle() {
+      return {
+        backgroundImage: `url(${this.backgroundImageUrl})`,  // Correct URL for image
+        backgroundSize: 'cover',  // Ensures the image covers the whole section
+        backgroundPosition: 'center',  // Centers the image
+        backgroundAttachment: 'fixed',  // Makes the image stay fixed when scrolling
+        height: '600px',  // Height of the section (can be adjusted)
+        color: 'white',  // Text color for contrast
+        textAlign: 'center',  // Centers the text
+        padding: '20px',  // Padding around the text
+      };
+    }
+  }
 };
 </script>
 
 <style scoped>
-/* Section 1 - Background Image */
-#section-one {
+/* Additional styling for the section */
+.my-section {
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Banner Section */
+.banner-section {
+  position: relative;
   background-size: cover;
   background-position: center;
-}
-
-.overlay-text {
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-/* Section 2 - Skill Icons */
-.skill-icon {
-  font-size: 3rem;
-  color: #333;
-  margin: 0 20px;
-  transition: transform 0.3s;
-}
-.skill-icon:hover {
-  transform: scale(1.2);
-}
-
-/* Carousel styling */
-.carousel-inner {
+  height: 600px; /* Adjust height as needed */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  color: #000;
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Light black overlay */
+  z-index: 1;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  z-index: 2;
+}
+
+/* Left Side Text Card */
+.text-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  color: black;
+  text-align: left;
+  width: 45%; /* Adjust width as needed */
+}
+
+.text-card h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.text-card p {
+  font-size: 18px;
+}
+
+/* Right Side Image Container */
+.image-container {
+  width: 45%; /* Adjust width as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Circular Image */
+.circular-image {
+  border-radius: 50%;
+  width: 75%; /* Adjust size of the circular image */
+  height: 50%;
+  object-fit: cover;
+  border: 4px solid #fff; /* Optional border for the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.4); /* Transparent glass effect */
 }
 </style>
-
-
