@@ -20,6 +20,12 @@
 <body class="dark">
   <div id="app"></div>
   <script type="module" src="./src/main.js"></script>
+  <script>
+  var path = window.location.pathname;
+  if (path !== "/") {
+    window.location.replace("/index.html" + path);
+  }
+</script>
 </body>
 
 </html>
