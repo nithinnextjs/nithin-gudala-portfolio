@@ -23,22 +23,22 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <router-link to="/" class="nav-link">Home</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/About">About Me</a>
+            <router-link to="/about" class="nav-link">About</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Contact">Contact</a>
+            <router-link to="/contact" class="nav-link">Contact</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Resume">Resume</a>
+           <router-link to="/Resume" class="nav-link">Resume</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/education">Education</a>
+           <router-link to="/education" class="nav-link">Education</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/experience">Experiences</a>
+          <router-link to="/experience" class="nav-link">Experiences</router-link>
           </li>
         </ul>
       </div>
