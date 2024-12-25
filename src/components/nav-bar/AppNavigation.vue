@@ -32,26 +32,38 @@
             <router-link to="/contact" class="nav-link">Contact</router-link>
           </li>
           <li class="nav-item">
-           <router-link to="/Resume" class="nav-link">Resume</router-link>
+            <router-link to="/Resume" class="nav-link">Resume</router-link>
           </li>
           <li class="nav-item">
-           <router-link to="/education" class="nav-link">Education</router-link>
+            <router-link to="/education" class="nav-link">Education</router-link>
           </li>
           <li class="nav-item">
-          <router-link to="/experience" class="nav-link">Experiences</router-link>
+            <router-link to="/experience" class="nav-link">Experiences</router-link>
           </li>
         </ul>
       </div>
 
-      <!-- Resume Download Button -->
-      <a href="/download" class="btn btn-logo ms-3">
-        <i class="fas fa-file-pdf me-2"></i> Resume Download
-      </a>
+      <div class="d-flex align-items-center">
+        <!-- File Format Selector -->
+        <select v-model="selectedFormat" class="form-select">
+          <option value="pdf">PDF</option>
+          <option value="docx">DOCX</option>
+          <option value="txt">TXT</option>
+        </select>
 
-      <!-- LinkedIn Button -->
-      <a href="https://www.linkedin.com/in/nithin-gudala/" class="btn btn-linkedin ms-3" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-linkedin me-2"></i> LinkedIn
-      </a>
+        <!-- Resume Download Button -->
+        <button class="btn btn-logo ms-3" @click="downloadResume">
+          <i class="fas fa-file-pdf me-2"></i> Resume Download
+        </button>
+
+        <!-- LinkedIn Button -->
+        <a href="https://www.linkedin.com/in/nithin-gudala-8946a0230/" 
+           class="btn btn-linkedin ms-3" 
+           target="_blank" 
+           rel="noopener noreferrer">
+          <i class="fab fa-linkedin me-2"></i> LinkedIn
+        </a>
+      </div>
     </div>
   </nav>
 </template>
@@ -59,7 +71,42 @@
 <script>
 export default {
   name: 'AppNavigation',
-};
+  data() {
+    return {
+      selectedFormat: 'pdf',  // Default format
+    };
+  },
+  methods: {
+    downloadResume() {
+  let fileUrl = '';
+  switch (this.selectedFormat) {
+    case 'pdf':
+      fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx'); // Path to the PDF
+      break;
+    case 'docx':
+      fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx'); // Path to the DOCX
+      break;
+    case 'txt':
+      fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx'); // Path to the TXT
+      break;
+    default:
+      fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx'); // Default to PDF
+  }
+
+  this.triggerDownload(fileUrl);
+},
+
+    triggerDownload(fileUrl) {
+      // Create an anchor element to trigger the download
+      const a = document.createElement('a');
+      a.href = fileUrl;
+      a.download = fileUrl.split('/').pop();  // Extract the file name from the URL
+      document.body.appendChild(a);  // Append anchor to DOM
+      a.click();  // Simulate the click to download
+      document.body.removeChild(a);  // Clean up by removing the anchor element
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -127,4 +174,3 @@ nav {
   }
 }
 </style>
-
