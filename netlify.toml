@@ -1,7 +1,7 @@
 [build]
-  base = "nithin-gudala-portfolio"  # Set this to the subdirectory if needed
-  publish = "dist"                  # The folder containing your built files (Vue default is dist/)
-  command = "npm run build"         # Or "yarn build"
+  base = ""  # Leave this empty if your project is in the root directory
+  publish = "dist"  # The folder containing your build output (Vue.js default is dist/)
+  command = "npm run build"  # or "yarn build"
 
 [[redirects]]
   from = "/*"
