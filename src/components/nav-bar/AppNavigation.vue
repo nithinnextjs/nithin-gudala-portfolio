@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <!-- Navbar Brand with Logo -->
       <a class="navbar-brand" href="#">
-        <img src="@/assets/nithin_logo.jpg" alt="Logo" class="logo" />
+        <img src="@/assets/NithinGudala_logo.png" alt="Logo" class="logo" />
       </a>
 
       <!-- Navbar Toggle Button (for mobile) -->
@@ -44,12 +44,6 @@
       </div>
 
       <div class="d-flex align-items-center">
-        <!-- File Format Selector -->
-        <select v-model="selectedFormat" class="form-select">
-          <option value="pdf">PDF</option>
-          <option value="docx">DOCX</option>
-          <option value="txt">TXT</option>
-        </select>
 
         <!-- Resume Download Button -->
         <button class="btn btn-logo ms-3" @click="downloadResume">
@@ -77,34 +71,22 @@ export default {
     };
   },
   methods: {
-    downloadResume() {
-  let fileUrl = '';
-  switch (this.selectedFormat) {
-    case 'pdf':
-      fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx'); // Path to the PDF
-      break;
-    case 'docx':
-      fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx'); // Path to the DOCX
-      break;
-    case 'txt':
-      fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx'); // Path to the TXT
-      break;
-    default:
-      fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx'); // Default to PDF
+   downloadResume() {
+    // Correct the file URL handling
+    let fileUrl = require('@/assets/Fullstack_nithin_gudala_resume.docx');  // Use 'require' to get the asset
+    fileUrl = fileUrl.default || fileUrl;  // Access the URL string (in case of Webpack's object structure)
+    this.triggerDownload(fileUrl);
+  },
+
+  triggerDownload(fileUrl) {
+    // Create an anchor element to trigger the download
+    const a = document.createElement('a');
+    a.href = fileUrl;
+    a.download = fileUrl.split('/').pop();  // Extract the file name from the URL
+    document.body.appendChild(a);  // Append anchor to DOM
+    a.click();  // Simulate the click to trigger the download
+    document.body.removeChild(a);  // Clean up by removing the anchor element
   }
-
-  this.triggerDownload(fileUrl);
-},
-
-    triggerDownload(fileUrl) {
-      // Create an anchor element to trigger the download
-      const a = document.createElement('a');
-      a.href = fileUrl;
-      a.download = fileUrl.split('/').pop();  // Extract the file name from the URL
-      document.body.appendChild(a);  // Append anchor to DOM
-      a.click();  // Simulate the click to download
-      document.body.removeChild(a);  // Clean up by removing the anchor element
-    }
   }
 }
 </script>

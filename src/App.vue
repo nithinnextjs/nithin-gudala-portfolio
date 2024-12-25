@@ -26,6 +26,6 @@ export default {
 
 <style scoped lang="scss">
 footer {
-  background-color: #2d3748; /* Tailwind gray-800 */
+  background-color: black; /* Tailwind gray-800 */
 }
 </style>
