@@ -1,11 +1,7 @@
-const { defineConfig } = require('@vue/cli-service');
-
-module.exports = defineConfig({
-  // your existing configuration
+module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/nithin-gudala-portfolio/' : '/',
-
-  // Adding rule to handle binary files
-  chainWebpack: config => {
+  
+  chainWebpack(config) {
     // Handle .pdf, .docx, .txt files
     config.module
       .rule('assets')
@@ -19,4 +15,4 @@ module.exports = defineConfig({
   },
 
   transpileDependencies: true
-});
+};
