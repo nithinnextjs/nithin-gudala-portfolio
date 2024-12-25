@@ -1,7 +1,7 @@
 {
   "name": "nithin-gudala-portfolio",
   "version": "0.1.0",
-  "homepage": "https://nithinnextjs.github.io/nithin-gudala-portfolio",
+  "homepage": "https://nithinnextjs.github.io",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
