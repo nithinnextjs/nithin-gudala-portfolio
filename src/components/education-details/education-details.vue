@@ -1,4 +1,7 @@
 <template>
+    <!-- Banner Section -->
+    <div class="banner" style="width: 100%; height: 300px; background-color: #f4f4f4; text-align: center; display: flex; justify-content: center; align-items: center;">
+    </div>
   <div class="container py-5">
     <!-- Education Heading Section -->
     <h1 class="text-center mb-4">My Education</h1>
@@ -21,7 +24,7 @@
             <h5 class="fw-bold">Geethanjali School</h5>
             <p class="text-muted">Hyderabad, India</p>
             <p class="mb-2"><strong>Course:</strong> High School</p>
-            <p><strong>Duration:</strong> 2010 - 2015</p>
+            <p><strong>Duration:</strong> 2002 - 2005</p>
             <p><strong>Details:</strong> Geethanjali School is a well-known educational institution in Hyderabad, offering excellent academic programs with a focus on overall student development.</p>
           </div>
         </div>
@@ -113,6 +116,18 @@ export default {
 
 <style scoped>
 /* Custom styling for the education section */
+.banner {
+  background-image: url('@/assets/banner_images.jpg');
+    background-size: cover; /* Ensure the image covers the entire div */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 .education-section {
   display: flex;
   flex-direction: column;
