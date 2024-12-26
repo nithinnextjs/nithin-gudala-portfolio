@@ -1,9 +1,15 @@
+// @ts-nocheck
 import { createRouter, createWebHistory } from 'vue-router';
+// @ts-ignore
 import HomeProfile from '../components/home-profile/home-profile.vue'
+// @ts-ignore
 import AboutDetails from '../components/about-details/about-details.vue'
+// @ts-ignore
 import EducationDetails from '../components/education-details/education-details.vue'
+// @ts-ignore
 import ExperienceDetails from '../components/experience-details/experience-details.vue'
-import ContactDetails from '../components/contact-details/contact-details.vue'
+import ContactDetails from '../components/contact-details/contact-details.vue';
+
 
 
 const routes = [
@@ -35,7 +41,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(), // Use HTML5 History mode
+    history: createWebHistory('/nithin-gudala-portfolio/'), // Use HTML5 History mode
     routes, // Define your routes here
   });
   
