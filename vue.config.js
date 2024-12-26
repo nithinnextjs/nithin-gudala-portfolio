@@ -1,7 +1,7 @@
 const webpack = require('webpack');  // Use CommonJS syntax with require
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/nithin-gudala-portfolio/' : '/',
+  publicPath: '/nithin-gudala-portfolio/',
 
   chainWebpack(config) {
     // Adding the DefinePlugin for hydration mismatch feature flag
