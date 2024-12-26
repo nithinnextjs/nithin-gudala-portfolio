@@ -32,9 +32,6 @@
             <router-link to="/contact" class="nav-link">Contact</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/Resume" class="nav-link">Resume</router-link>
-          </li>
-          <li class="nav-item">
             <router-link to="/education" class="nav-link">Education</router-link>
           </li>
           <li class="nav-item">
