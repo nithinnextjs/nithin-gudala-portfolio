@@ -19,7 +19,40 @@
     </div>
   </div>
     </section>
-  </div>
+
+    <section class=".section-carousel mt-5">
+      <div class="my-2">
+         <!-- Heading with stars and background -->
+         <h2 class="heading text-center my-4">
+          Technologies That Power My Work
+        </h2>
+        <!-- Carousel -->
+        <div id="skillsCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" v-for="(chunk, index) in iconChunks" :key="index">
+              <div class="row justify-content-center">
+                <div class="col-3" v-for="(skill, idx) in chunk" :key="idx">
+                  <div class="d-flex flex-column align-items-center">
+                    <img :src="skill.icon" alt="Skill Icon" class="img-fluid" style="width: 60px; height: 60px;"/>
+                    <h6 class="mt-2">{{ skill.name }}</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#skillsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#skillsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+      </div>
 </template>
 
 <script>
@@ -28,7 +61,26 @@ export default {
   data() {
     return {
       // Dynamically require the image from the assets directory
-      backgroundImageUrl: require('@/assets/section_one_ng.jpg')
+      backgroundImageUrl: require('@/assets/section_one_ng.jpg'),
+      skills: [
+        { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/html5.svg' },
+        { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/css3.svg' },
+        { name: 'Bootstrap 5', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/bootstrap.svg' },
+        { name: 'Tailwind', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/tailwindcss.svg' },
+        { name: 'SASS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/sass.svg' },
+        { name: 'Angular', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/angular.svg' },
+        { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/react.svg' },
+        { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/node-dot-js.svg' },
+        { name: 'Java', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/java.svg' },
+        { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/javascript.svg' },
+        { name: 'NoSQL', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/mongodb.svg' },
+        { name: 'SQL', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/mysql.svg' },
+        { name: 'Git', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/git.svg' },
+        { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg' },
+        { name: 'Azure', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/azure.svg' },
+        { name: 'AWS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/amazonaws.svg' },
+        { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/mongodb.svg' }
+      ]
     };
   },
   computed: {
@@ -44,8 +96,28 @@ export default {
         textAlign: 'center',  // Centers the text
         padding: '20px',  // Padding around the text
       };
+    },
+     // Split the array into chunks of 4
+     iconChunks() {
+      const chunkSize = 4;
+      const chunks = [];
+      for (let i = 0; i < this.skills.length; i += chunkSize) {
+        chunks.push(this.skills.slice(i, i + chunkSize));
+      }
+      return chunks;
     }
-  }
+  },
+  mounted() {
+    // Ensuring that the carousel items are laid out properly after the component is mounted
+    setTimeout(() => {
+      const carousel = document.getElementById('skillsCarousel');
+      const carouselItems = carousel.querySelectorAll('.carousel-item');
+      carouselItems.forEach(item => item.style.height = 'auto');
+    }, 100); // Timeout for layout fix
+  },
+  created() {
+  console.log(this.skills);  // Log skills to check if they are correctly set
+}
 };
 </script>
 
@@ -132,5 +204,58 @@ export default {
   border: 4px solid #fff; /* Optional border for the image */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.4); /* Transparent glass effect */
+}
+
+.heading {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black; /* White text color for contrast */
+  text-align: center;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Position it just below the text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: #fff; /* White underline */
+}
+
+.heading::before {
+  content: "★ ★ ★";
+  font-size: 1.5rem;
+  color: #fff;
+  position: absolute;
+  top: -20px; /* Position stars above the heading */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Styling for the carousel items */
+.carousel-item {
+  padding: 20px 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+img {
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+/* Background color for the section */
+.section-carousel {
+  background-color: #333; /* Dark background that contrasts with the icons */
+  padding: 40px 0;
 }
 </style>
