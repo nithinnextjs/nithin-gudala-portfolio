@@ -21,7 +21,7 @@
     </section>
 
     <!-- Technologies Section -->
-    <section class="section-carousel mt-5">
+    <section class="section-carousel">
       <div class="my-2">
         <h2 class="heading text-center my-4">Technologies That Power My Work</h2>
         <div id="skillsCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -50,7 +50,7 @@
     </section>
 
     <!-- Work Highlights Section -->
-    <section class="section-carousel mt-5">
+    <section class="section-carousel">
       <div class="my-2">
         <h2 class="heading text-center my-4">Work Highlights</h2>
         <div class="counter-section">
@@ -63,7 +63,7 @@
     </section>
 
     <!-- Worked Companies Section -->
-    <section class="section-carousel mt-5">
+    <section class="section-carousel">
       <div class="my-2">
         <h2 class="heading text-center my-4">Worked Companies</h2>
         <div class="carousel">
@@ -112,6 +112,21 @@ export default {
         { id: 4, target: 15, current: 0, name: 'Skills' }
       ],
       companies: [
+        {
+          image: 'https://via.placeholder.com/150',
+          jobTitle: 'Frontend Developer',
+          years: '2018 - 2022'
+        },
+        {
+          image: 'https://via.placeholder.com/150',
+          jobTitle: 'UI/UX Designer',
+          years: '2020 - 2024'
+        },
+        {
+          image: 'https://via.placeholder.com/150',
+          jobTitle: 'Software Engineer',
+          years: '2017 - 2021'
+        },
         {
           image: 'https://via.placeholder.com/150',
           jobTitle: 'Frontend Developer',
@@ -258,7 +273,7 @@ export default {
   position: relative;
   font-size: 2rem;
   font-weight: bold;
-  color: black;
+  color: #ffc107;
   text-align: center;
 }
 
@@ -276,7 +291,7 @@ export default {
 .heading::before {
   content: "★ ★ ★";
   font-size: 1.5rem;
-  color: #fff;
+  color: #ffc107;
   position: absolute;
   top: -20px;
   left: 50%;
@@ -302,6 +317,7 @@ img:hover {
 
 .section-carousel {
   padding: 40px 0;
+  background-color: #969593;
 }
 
 .work-highlights {

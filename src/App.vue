@@ -6,64 +6,65 @@
     <main class="">
       <router-view />
     </main>
-
-  <footer class="m-5 py-5">
-    <div class="row">
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-      </div>
-
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-      </div>
-
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-5 offset-md-1 mb-3">
-        <form>
-          <h5>Subscribe to our newsletter</h5>
-          <p>Monthly digest of what's new and exciting from us.</p>
-          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-            <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-            <button class="btn btn-primary" type="button">Subscribe</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>&copy; 2024 Company, Inc. All rights reserved.</p>
-      <ul class="list-unstyled d-flex">
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+<footer class="px-5 py-5 bg-dark text-warning">
+  <div class="row">
+    <div class="col-6 col-md-2 mb-3">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">About</a></li>
       </ul>
     </div>
-  </footer>
+
+    <div class="col-6 col-md-2 mb-3">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col-6 col-md-2 mb-3">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-5 offset-md-1 mb-3">
+      <form>
+        <h5>Subscribe to our newsletter</h5>
+        <p class="text-center">Monthly digest of what's new and exciting from us.</p>
+        <div class="d-flex flex-column flex-sm-row w-100 gap-2 justify-content-center">
+          <label for="newsletter1" class="visually-hidden">Email address</label>
+          <input id="newsletter1" type="email" class="form-control" placeholder="Email address">
+          <button class="btn btn-warning text-white" type="button">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top border-warning">
+    <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+    <ul class="list-unstyled d-flex">
+      <li class="ms-3"><a class="link-warning" href="#"><i class="fas fa-file-pdf me-2"></i>PDF</a></li>
+      <li class="ms-3"><a class="link-warning" href="#"><i class="fas fa-file-pdf me-2"></i>PDF</a></li>
+      <li class="ms-3"><a class="link-warning" href="#"><i class="fas fa-file-pdf me-2"></i>PDF</a></li>
+    </ul>
+  </div>
+</footer>
+
+
   </div>
 </template>
 
@@ -155,4 +156,57 @@ export default {
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
+      footer {
+  background-color: black;
+  color: #ffc107; /* Text color for all elements */
+}
+
+footer .nav-link {
+  color: #ffc107; /* Links color */
+}
+
+footer .btn-warning {
+  background-color: #ffc107; /* Button background color */
+  color: white; /* Button text color */
+}
+
+footer .btn-warning:hover {
+  background-color: #e0a800; /* Darker shade of yellow for hover effect */
+}
+
+footer .border-warning {
+  border-color: #ffc107; /* Border color for the footer */
+}
+
+footer .link-warning {
+  color: #ffc107; /* Social icons color */
+}
+
+footer .link-warning:hover {
+  color: #e0a800; /* Hover effect for social icons */
+}
+
+footer .me-2 {
+  margin-right: 0.5rem; /* Add space between icons and text */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 767px) {
+  footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  footer .col-md-2 {
+    margin-bottom: 20px;
+  }
+
+  footer .col-md-5 {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
+
+
 </style>

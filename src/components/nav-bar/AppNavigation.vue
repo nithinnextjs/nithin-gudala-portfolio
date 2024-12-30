@@ -112,16 +112,22 @@ nav {
   .navbar {
     padding: 1rem;
   }
+  
+    /* Active Link Customization */
+    .nav-item .nav-link {
+    color: #ffc107 !important; /* Light color for active link */
+  }
 
   /* Active Link Customization */
   .nav-item.active .nav-link {
     font-weight: bold;
-    color: #f8f9fa; /* Light color for active link */
+    color: #ffc107 !important; /* Light color for active link */
+    text-decoration: underline;
   }
 
   /* Customize Resume Download button background color */
   .btn-logo {
-    background-color: #1d4ed8; /* Example color matching your logo */
+    background-color: #ffc107; /* Example color matching your logo */
     border: none;
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
@@ -130,7 +136,7 @@ nav {
   }
 
   .btn-logo:hover {
-    background-color: #2563eb; /* Darker shade on hover */
+    background-color: #ffbf00; /* Darker shade on hover */
   }
 
   /* Customize LinkedIn button background color */
