@@ -2,7 +2,11 @@ const webpack = require('webpack');
 
 module.exports = {
   publicPath: '/nithin-gudala-portfolio/',
-  outputDir: 'dist', 
+    // Output directory for the build
+    outputDir: 'dist',
+
+    // Specify how to handle assets such as images and fonts
+    assetsDir: 'assets',
   /**
    * @param {{ plugin: (arg0: string) => { (): any; new (): any; use: { (arg0: typeof webpack.DefinePlugin, arg1: { __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: string; }[]): void; new (): any; }; }; module: { rule: (arg0: string) => { (): any; new (): any; test: { (arg0: RegExp): { (): any; new (): any; use: { (arg0: string): { (): any; new (): any; loader: { (arg0: string): { (): any; new (): any; options: { (arg0: { name: string; }): { (): any; new (): any; end: { (): void; new (): any; }; }; new (): any; }; }; new (): any; }; }; new (): any; }; }; new (): any; }; }; }; }} config
    */
