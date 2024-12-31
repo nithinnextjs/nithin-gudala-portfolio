@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-  publicPath: '/nithin-gudala-portfolio/',
+  publicPath: '/',
     // Output directory for the build
     outputDir: 'dist',
 
