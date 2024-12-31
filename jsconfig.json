@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "baseUrl": "./",
-    "moduleResolution": "node",
+    "module": "ESNext",        // Ensure it uses ES module system
+    "moduleResolution": "Node", // Resolves modules like Node.js does
+    "target": "ESNext",         // Ensure output is ESNext for compatibility with modern JS features
+    "allowJs": true,            // Allow JavaScript files to be part of the project
+    "checkJs": true,            // Enable checking for JS files
+    "esModuleInterop": true,    // Helps with importing CommonJS modules
+    "skipLibCheck": true,       // Skips type checking for libraries
+    "baseUrl": ".",             // Set base directory for module resolution
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
-  }
+      "@/*": ["src/*"]           // Example of module path alias
+    }
+  },
+  "include": [
+    "src/**/*",                  // Include the source code directory
+    "vue.config.js"              // Make sure `vue.config.js` is included
+  ]
 }

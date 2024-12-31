@@ -1,5 +1,26 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  publicPath: '/nithin-gudala-portfolio/',
-  transpileDependencies: true
-})
+const webpack = require('webpack');
+
+module.exports = {
+  publicPath: '/',  // Set publicPath to root
+  outputDir: 'dist', // Output directory for the build
+  assetsDir: 'assets', // Folder for assets
+
+  chainWebpack(config) {
+    config.plugin('define')
+      .use(webpack.DefinePlugin, [{
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false',
+      }]);
+
+    config.module
+      .rule('assets')
+      .test(/\.(pdf|docx|txt)$/)
+      .use('file-loader')
+      .loader('file-loader')
+      .options({
+        name: 'assets/[name].[hash:8].[ext]',
+      })
+      .end();
+  },
+
+  transpileDependencies: true,
+};
