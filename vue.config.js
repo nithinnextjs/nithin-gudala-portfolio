@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-  publicPath: '/',  // Set publicPath to root
+  publicPath: process.env.VUE_APP_BASE_URL || '/',
   outputDir: 'dist', // Output directory for the build
   assetsDir: 'assets', // Folder for assets
 
