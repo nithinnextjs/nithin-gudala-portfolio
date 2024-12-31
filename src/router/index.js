@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { createRouter, createWebHistory } from 'vue-router';
 // @ts-ignore
 import HomeProfile from '../components/home-profile/home-profile.vue'
@@ -10,11 +9,9 @@ import EducationDetails from '../components/education-details/education-details.
 import ExperienceDetails from '../components/experience-details/experience-details.vue'
 import ContactDetails from '../components/contact-details/contact-details.vue';
 
-
-
 const routes = [
   {
-    path: '/',
+    path: '/',  // Home path is correct
     name: 'HomeProfile',
     component: HomeProfile
   },
@@ -35,14 +32,14 @@ const routes = [
   },
   {
     path: '/contact',
-    name: 'contacteDetails',
+    name: 'ContactDetails',
     component: ContactDetails
   }
-]
+];
 
 const router = createRouter({
-    history: createWebHistory('/nithin-gudala-portfolio/'), // Use HTML5 History mode
-    routes, // Define your routes here
-  });
-  
-  export default router;
+  history: createWebHistory('/nithin-gudala-portfolio/'), // Make sure the base path is set
+  routes
+});
+
+export default router;
