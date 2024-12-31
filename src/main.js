@@ -1,6 +1,6 @@
 import { createApp } from 'vue'; // Vue 3 way of creating an app
 import App from './App.vue'; // Your main Vue component
-import router from './router'; // Your Vue Router setup
+import router from './router/index.js'; // Your Vue Router setup
 // Import Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
