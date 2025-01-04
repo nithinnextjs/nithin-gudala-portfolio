@@ -1,14 +1,14 @@
 <template>
   <div class="banner-main">
     <!-- Banner Section -->
-    <div class="banner" style="width: 100%; height: 300px; background-color: #f4f4f4; text-align: center; display: flex; justify-content: center; align-items: center;">
+    <div class="banner" style="width: 100%; height: 200px; background-color: #f4f4f4; text-align: center; display: flex; justify-content: center; align-items: center;">
       <h1>Contact Me</h1>
     </div>
 
     <!-- Contact Form Section -->
-    <div class="container my-5 mb-5">
+    <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-6 m-5">
           <!-- Card with the form -->
           <div class="card p-4">
             <form @submit.prevent="submitForm" novalidate>
@@ -62,7 +62,7 @@
 
               <!-- Submit Button -->
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-submit">Submit</button>
               </div>
             </form>
           </div>
@@ -231,5 +231,10 @@ export default {
   to {
     opacity: 1;
   }
+}
+
+.btn-submit{
+  background-color: #ffc107;
+    color: white;
 }
 </style>
