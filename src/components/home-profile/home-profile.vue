@@ -22,40 +22,41 @@
 
     <!-- Technologies Section -->
     <section class="section-carousel">
-    <div class="my-2">
-      <h2 class="heading text-center my-4">Technologies That Power My Work</h2>
-      <div id="skillsCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <!-- Loop through the chunks and set the 'active' class dynamically -->
-          <div 
-            class="carousel-item" 
-            :class="{ active: index === currentIndex }" 
-            v-for="(chunk, index) in iconChunks" 
-            :key="index"
-          >
-            <div class="row justify-content-center">
-              <div class="col-3" v-for="(skill, idx) in chunk" :key="idx">
-                <div class="d-flex flex-column align-items-center">
-                  <img :src="skill.icon" alt="Skill Icon" class="img-fluid" style="width: 60px; height: 60px;" />
+      <div class="container my-4">
+        <h2 class="heading text-center my-4">Technologies That Power My Work</h2>
+        <div id="skillsCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div
+              class="carousel-item"
+              :class="{ active: index === currentIndex }"
+              v-for="(chunk, index) in iconChunks"
+              :key="index"
+            >
+              <div class="row">
+                <div class="col-3 text-center" v-for="(skill, idx) in chunk" :key="idx">
+                  <img
+                    :src="skill.icon"
+                    alt="Skill Icon"
+                    class="img-fluid"
+                    style="width: 60px; height: 60px;"
+                  />
                   <h6 class="mt-2">{{ skill.name }}</h6>
                 </div>
               </div>
             </div>
           </div>
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" @click="prevSlide">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" @click="nextSlide">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#skillsCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#skillsCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-    </div>
-  </section>
+    </section>
 
     <!-- Work Highlights Section -->
     <section class="section-carousel">
@@ -63,10 +64,10 @@
         <h2 class="heading text-center my-4">Work Highlights</h2>
         <div class="counter-section">
           <div class="counter-card" v-for="counter in counters" :key="counter.id">
-            <div class="counter-number">{{ counter.current }} +</div>
-            <div class="counter-name">{{ counter.name }}</div>
-          </div>
+          <div class="counter-number">{{ counter.current }} +</div>
+         <div class="counter-name">{{ counter.name }}</div>
         </div>
+       </div>
       </div>
     </section>
 
@@ -120,6 +121,7 @@ export default {
         { id: 3, target: 500, current: 0, name: 'LinkedIn Connections' },
         { id: 4, target: 15, current: 0, name: 'Skills' }
       ],
+      intervalId: null,
       companies: [
         {
           image: require("@/assets/humana.jpg"),
@@ -127,12 +129,12 @@ export default {
           years: '2018 - 2022'
         },
         {
-          image: require("@/assets/humana.jpg"),
+          image: require("@/assets/hubgroup.jpg"),
           jobTitle: 'UI/UX Designer',
           years: '2020 - 2024'
         },
         {
-          image: require("@/assets/humana.jpg"),
+          image: require("@/assets/educationdept.jpg"),
           jobTitle: 'Software Engineer',
           years: '2017 - 2021'
         },
@@ -142,12 +144,12 @@ export default {
           years: '2018 - 2022'
         },
         {
-          image: require("@/assets/humana.jpg"),
+          image: require("@/assets/hubgroup.jpg"),
           jobTitle: 'UI/UX Designer',
           years: '2020 - 2024'
         },
         {
-          image: require("@/assets/humana.jpg"),
+          image: require("@/assets/educationdept.jpg"),
           jobTitle: 'Software Engineer',
           years: '2017 - 2021'
         }
@@ -162,6 +164,10 @@ export default {
       carouselItems.forEach(item => item.style.height = 'auto');
     }, 100);
     this.startCounters();
+    this.startAutoScroll();
+  },
+  beforeUnmount() {
+    this.stopAutoScroll();
   },
   computed: {
     backgroundStyle() {
@@ -177,7 +183,7 @@ export default {
       };
     },
     iconChunks() {
-      const chunkSize = 4; // Number of skills per slide
+      const chunkSize = 4;
       const chunks = [];
       for (let i = 0; i < this.skills.length; i += chunkSize) {
         chunks.push(this.skills.slice(i, i + chunkSize));
@@ -196,7 +202,25 @@ export default {
           }
         }, 100);
       });
-    }
+    },
+    chunkIcons(size) {
+      this.iconChunks = [];
+      for (let i = 0; i < this.skills.length; i += size) {
+        this.iconChunks.push(this.skills.slice(i, i + size));
+      }
+    },
+    startAutoScroll() {
+      this.intervalId = setInterval(this.nextSlide, 3000);
+    },
+    stopAutoScroll() {
+      clearInterval(this.intervalId);
+    },
+    nextSlide() {
+      this.currentIndex = (this.currentIndex + 1) % this.iconChunks.length;
+    },
+    prevSlide() {
+      this.currentIndex = (this.currentIndex - 1 + this.iconChunks.length) % this.iconChunks.length;
+    },
   }
 };
 </script>
@@ -326,7 +350,7 @@ img:hover {
 
 .section-carousel {
   padding: 40px 0;
-  background-color: #969593;
+  background-color: #dddcdc;
 }
 
 .work-highlights {
@@ -335,30 +359,58 @@ img:hover {
   background-color: #f0f4f8;
 }
 
+/* General container styling */
 .counter-section {
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px; /* Space between cards */
+  padding: 16px;
+  height: 20vh; /* Full viewport height */
+  overflow-y: auto; /* Prevent content overflow */
+  box-sizing: border-box; /* Include padding in height calculation */
 }
 
+/* Individual counter card */
 .counter-card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9; /* Example background color */
+  border: 1px solid #ddd; /* Example border */
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 120px; /* Ensures proper sizing */
+  text-align: center;
+  flex: 1 1 calc(25% - 32px); /* Flexible width for 4 items per row with gaps */
+  max-width: 250px; /* Optional: limits size */
 }
 
+/* Text styling */
 .counter-number {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
-  color: #2f7b9e;
+  margin-bottom: 8px;
 }
 
 .counter-name {
-  font-size: 18px;
-  color: #555;
-  margin-top: 10px;
+  font-size: 16px;
+  color: #555; /* Example text color */
+}
+
+/* Media query for smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+  .counter-section {
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items from top */
+  }
+
+  .counter-card {
+    width: 100%; /* Make cards take full width */
+    max-width: 320px; /* Optional: limits readability width */
+    margin: 0 auto; /* Center the cards horizontally */
+  }
 }
 
 .worked-companies {
@@ -407,15 +459,7 @@ img:hover {
 }
 
 /* Custom styles for carousel */
-.carousel-inner {
-  display: flex;
-  justify-content: center;
-}
 
-.carousel-item {
-  display: flex;
-  justify-content: center;
-}
 
 .carousel-item .row {
   flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
