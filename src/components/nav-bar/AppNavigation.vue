@@ -23,19 +23,19 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link to="/" class="nav-link">Home</router-link>
+            <router-link to="/" @click="toggleNavbar" class="nav-link">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/about" class="nav-link">About</router-link>
+            <router-link to="/about" @click="toggleNavbar" class="nav-link">About</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/contact" class="nav-link">Contact</router-link>
+            <router-link to="/education" @click="toggleNavbar" class="nav-link">Education</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/education" class="nav-link">Education</router-link>
+            <router-link to="/experience" @click="toggleNavbar" class="nav-link">Experiences</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/experience" class="nav-link">Experiences</router-link>
+            <router-link to="/contact" @click="toggleNavbar" class="nav-link">Contact</router-link>
           </li>
         </ul>
       </div>
@@ -83,7 +83,13 @@ export default {
     document.body.appendChild(a);  // Append anchor to DOM
     a.click();  // Simulate the click to trigger the download
     document.body.removeChild(a);  // Clean up by removing the anchor element
-  }
+  },
+  toggleNavbar() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse.classList.contains('show')) {
+      navbarCollapse.classList.remove('show'); // Close the navbar
+    }
+  },
   }
 }
 </script>

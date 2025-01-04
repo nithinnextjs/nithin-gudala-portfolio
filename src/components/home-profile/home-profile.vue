@@ -9,7 +9,7 @@
           <!-- Left Side: Card with text -->
           <div class="text-card">
             <h1>Nithin Gudala</h1>
-            <p>Full Stack Developer</p>
+            <p>Sr. Full stack Developer | Senior Frontend Engineer</p>
           </div>
 
           <!-- Right Side: Circular Image -->
@@ -76,7 +76,7 @@
         <h2 class="heading text-center my-4">Worked Companies</h2>
         <div class="carousel">
           <div class="carousel-card" v-for="(company, index) in companies" :key="index">
-            <img :src="company.image" alt="company image" class="company-image" />
+            <img :src="`${company.image}`" alt="company image" class="company-image" />
             <div class="job-details">
               <h3>{{ company.jobTitle }}</h3>
               <p>{{ company.years }}</p>
@@ -122,32 +122,32 @@ export default {
       ],
       companies: [
         {
-          image: 'https://via.placeholder.com/150',
+          image: require("@/assets/humana.jpg"),
           jobTitle: 'Frontend Developer',
           years: '2018 - 2022'
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: require("@/assets/humana.jpg"),
           jobTitle: 'UI/UX Designer',
           years: '2020 - 2024'
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: require("@/assets/humana.jpg"),
           jobTitle: 'Software Engineer',
           years: '2017 - 2021'
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: require("@/assets/humana.jpg"),
           jobTitle: 'Frontend Developer',
           years: '2018 - 2022'
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: require("@/assets/humana.jpg"),
           jobTitle: 'UI/UX Designer',
           years: '2020 - 2024'
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: require("@/assets/humana.jpg"),
           jobTitle: 'Software Engineer',
           years: '2017 - 2021'
         }
