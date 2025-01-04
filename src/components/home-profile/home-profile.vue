@@ -63,7 +63,7 @@
       <div class="my-2">
         <h2 class="heading text-center my-4">Work Highlights</h2>
         <div class="counter-section">
-          <div class="counter-card" v-for="counter in counters" :key="counter.id">
+          <div class="counter-card" v-for="counter in counters" :key="counter.id" :style="{ backgroundColor: counter.color }">
           <div class="counter-number">{{ counter.current }} +</div>
          <div class="counter-name">{{ counter.name }}</div>
         </div>
@@ -116,10 +116,10 @@ export default {
       ],
       currentIndex: 0, // Keep track of the current slide
       counters: [
-        { id: 1, target: 25, current: 0, name: 'Projects' },
-        { id: 2, target: 10, current: 0, name: 'Experiences' },
-        { id: 3, target: 500, current: 0, name: 'LinkedIn Connections' },
-        { id: 4, target: 15, current: 0, name: 'Skills' }
+        { id: 1, target: 25, current: 0, name: 'Projects', color:'#fef6e0' },
+        { id: 2, target: 10, current: 0, name: 'Experiences', color:'#e8ebed'},
+        { id: 3, target: 500, current: 0, name: 'LinkedIn Connections', color:'#f0ecf9' },
+        { id: 4, target: 15, current: 0, name: 'Skills', color:'#e7f6f8' }
       ],
       intervalId: null,
       companies: [
@@ -350,7 +350,7 @@ img:hover {
 
 .section-carousel {
   padding: 40px 0;
-  background-color: #dddcdc;
+  background-color: #fdfdfd85;
 }
 
 .work-highlights {
