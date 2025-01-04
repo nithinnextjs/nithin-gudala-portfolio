@@ -1,10 +1,10 @@
 <template>
+  <FallingLogos />
     <!-- Banner Section -->
     <div class="banner" style="width: 100%; height: 300px; background-color: #f4f4f4; text-align: center; display: flex; justify-content: center; align-items: center;">
+      <h1>My Educatio</h1>
     </div>
   <div class="container py-5">
-    <!-- Education Heading Section -->
-    <h1 class="text-center mb-4">My Education</h1>
 
     <!-- Education Section with Banner and Details Side-by-Side -->
     <div class="row justify-content-center">
@@ -21,11 +21,12 @@
 
           <!-- School Details -->
           <div class="school-details ms-lg-4">
-            <h5 class="fw-bold">Geethanjali School</h5>
-            <p class="text-muted">Hyderabad, India</p>
-            <p class="mb-2"><strong>Course:</strong> High School</p>
-            <p><strong>Duration:</strong> 2002 - 2005</p>
-            <p><strong>Details:</strong> Geethanjali School is a well-known educational institution in Hyderabad, offering excellent academic programs with a focus on overall student development.</p>
+            <h5 class="fw-bold">University of Southern Queensland</h5>
+            <p class="text-muted">Sydney, Australia</p>
+            <p class="mb-2"><strong>Course:</strong> Masters in Information Systems </p>
+            <p><strong>Duration:</strong> 2013 - 2015</p>
+            <p><strong>Details:</strong> At the University of Southern Queensland, we foster growth through exceptional learning and cutting-edge research.As a member of the USQ community, I am driven by the opportunity to shape the future through education and innovation.</p>
+            <p><strong>Website:</strong> <a href="https://www.unisq.edu.au/" target="_blank">Visit University of Southern Queensland</a></p>
           </div>
         </div>
       </div>
@@ -35,30 +36,17 @@
     <div class="row justify-content-center">
       <div class="col-md-10 mb-5">
         <div class="education-section d-flex flex-column flex-lg-row align-items-center">
-         <!-- School Details -->
+          <!-- School Details -->
           <div class="school-details ms-lg-4">
-            <h5 class="fw-bold">Geethanjali School</h5>
+            <h5 class="fw-bold">Jawaharlal Nehru Technological University Hyderabad</h5>
+            <p><strong class="fw-bold">College campus:</strong>St. Mary's Engineering College</p>
             <p class="text-muted">Hyderabad, India</p>
-            <p class="mb-2"><strong>Course:</strong> High School</p>
-            <p><strong>Duration:</strong> 2010 - 2015</p>
-            <p><strong>Details:</strong> Geethanjali School is a well-known educational institution in Hyderabad, offering excellent academic programs with a focus on overall student development.</p>
+            <p class="mb-2"><strong>Course:</strong> School</p>
+            <p><strong>Duration:</strong> 2007 - 2011</p>
+            <p><strong>Details:</strong> The university is renowned for its research in various fields such as engineering, computer science, electronics, and biotechnology. It has multiple research centers and collaborates with industries and institutions globally.</p>
+            <p><strong>Website:</strong> <a href="http://www.smecd.com/" target="_blank">Visit St. Mary's Engineering College</a></p>
           </div>
-          <!-- Banner Image -->
-          <div class="banner-img mb-4 mb-lg-0">
-            <img 
-              src="@/assets/education3.jpg"
-              alt="School Banner"
-              class="img-fluid rounded"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
 
-       <!-- Education Section with Banner and Details Side-by-Side -->
-    <div class="row justify-content-center">
-      <div class="col-md-10 mb-5">
-        <div class="education-section d-flex flex-column flex-lg-row align-items-center">
           <!-- Banner Image -->
           <div class="banner-img mb-4 mb-lg-0">
             <img 
@@ -67,14 +55,33 @@
               class="img-fluid rounded"
             />
           </div>
+        </div>
+      </div>
+    </div>
 
-          <!-- School Details -->
+         <!-- Education Section with Banner and Details Side-by-Side -->
+         <div class="row justify-content-center">
+      <div class="col-md-10 mb-5">
+        <div class="education-section d-flex flex-column flex-lg-row align-items-center">
+
+          <!-- Banner Image -->
+          <div class="banner-img mb-4 mb-lg-0">
+            <img 
+              src="@/assets/education3.jpg"
+              alt="School Banner"
+              class="img-fluid rounded"
+            />
+          </div>
+
+         <!-- School Details -->
           <div class="school-details ms-lg-4">
-            <h5 class="fw-bold">Geethanjali School</h5>
+            <h5 class="fw-bold">Sri Chaitanya Junior College</h5>
             <p class="text-muted">Hyderabad, India</p>
             <p class="mb-2"><strong>Course:</strong> High School</p>
-            <p><strong>Duration:</strong> 2010 - 2015</p>
-            <p><strong>Details:</strong> Geethanjali School is a well-known educational institution in Hyderabad, offering excellent academic programs with a focus on overall student development.</p>
+            <p><strong>Duration:</strong> 2005 - 2007</p>
+            <p><strong>Details:</strong> At Sri Chaitanya Junior College, we nurture academic brilliance and foster holistic development through quality education.Proud to be part of the Sri Chaitanya Junior College community, where knowledge and innovation shape the leaders of tomorrow.</p>
+            <p><strong>Website:</strong> <a href="https://srichaitanya.net/" target="_blank">Visit Sri Chaitanya Junior College</a>
+            </p>
           </div>
         </div>
       </div>
@@ -90,7 +97,7 @@
             <h5 class="fw-bold">Geethanjali School</h5>
             <p class="text-muted">Hyderabad, India</p>
             <p class="mb-2"><strong>Course:</strong> High School</p>
-            <p><strong>Duration:</strong> 2010 - 2015</p>
+            <p><strong>Duration:</strong> 1995 - 2005</p>
             <p><strong>Details:</strong> Geethanjali School is a well-known educational institution in Hyderabad, offering excellent academic programs with a focus on overall student development.</p>
           </div>
 
@@ -109,8 +116,13 @@
 </template>
 
 <script>
+import FallingLogos from '../animations/falling-logs.vue';
+
 export default {
   name: 'EducationDetails',
+  components: {
+    FallingLogos,
+  },
 };
 </script>
 
@@ -162,6 +174,10 @@ export default {
 
 .school-details p strong {
   font-weight: bold;
+}
+
+.fw-bold{
+  color: #ffc107!important;
 }
 
 /* Media Query for Responsive Layout */

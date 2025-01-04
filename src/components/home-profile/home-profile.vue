@@ -22,32 +22,40 @@
 
     <!-- Technologies Section -->
     <section class="section-carousel">
-      <div class="my-2">
-        <h2 class="heading text-center my-4">Technologies That Power My Work</h2>
-        <div id="skillsCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" v-for="(chunk, index) in iconChunks" :key="index">
-              <div class="row justify-content-center">
-                <div class="col-3" v-for="(skill, idx) in chunk" :key="idx">
-                  <div class="d-flex flex-column align-items-center">
-                    <img :src="skill.icon" alt="Skill Icon" class="img-fluid" style="width: 60px; height: 60px;" />
-                    <h6 class="mt-2">{{ skill.name }}</h6>
-                  </div>
+    <div class="my-2">
+      <h2 class="heading text-center my-4">Technologies That Power My Work</h2>
+      <div id="skillsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Loop through the chunks and set the 'active' class dynamically -->
+          <div 
+            class="carousel-item" 
+            :class="{ active: index === currentIndex }" 
+            v-for="(chunk, index) in iconChunks" 
+            :key="index"
+          >
+            <div class="row justify-content-center">
+              <div class="col-3" v-for="(skill, idx) in chunk" :key="idx">
+                <div class="d-flex flex-column align-items-center">
+                  <img :src="skill.icon" alt="Skill Icon" class="img-fluid" style="width: 60px; height: 60px;" />
+                  <h6 class="mt-2">{{ skill.name }}</h6>
                 </div>
               </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#skillsCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#skillsCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#skillsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#skillsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- Work Highlights Section -->
     <section class="section-carousel">
@@ -105,6 +113,7 @@ export default {
         { name: 'AWS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/amazonaws.svg' },
         { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/mongodb.svg' }
       ],
+      currentIndex: 0, // Keep track of the current slide
       counters: [
         { id: 1, target: 25, current: 0, name: 'Projects' },
         { id: 2, target: 10, current: 0, name: 'Experiences' },
@@ -168,13 +177,13 @@ export default {
       };
     },
     iconChunks() {
-      const chunkSize = 4;
+      const chunkSize = 4; // Number of skills per slide
       const chunks = [];
       for (let i = 0; i < this.skills.length; i += chunkSize) {
         chunks.push(this.skills.slice(i, i + chunkSize));
       }
       return chunks;
-    }
+    },
   },
   methods: {
     startCounters() {
@@ -395,5 +404,43 @@ img:hover {
 .job-details p {
   font-size: 16px;
   color: #777;
+}
+
+/* Custom styles for carousel */
+.carousel-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item .row {
+  flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+}
+
+.carousel-item .col-3 {
+  flex: 1 0 25%; /* By default show 4 items per slide (for large screens) */
+  padding: 10px;
+}
+
+@media (max-width: 1200px) {
+  .carousel-item .col-3 {
+    flex: 1 0 33%; /* 3 items per slide on medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel-item .col-3 {
+    flex: 1 0 50%; /* 2 items per slide on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item .col-3 {
+    flex: 1 0 100%; /* 1 item per slide on very small screens */
+  }
 }
 </style>
