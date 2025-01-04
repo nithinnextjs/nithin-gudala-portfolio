@@ -2,7 +2,7 @@
   <!-- Banner Section -->
   <div class="banner"
     style="width: 100%; height: 300px; background-color: #f4f4f4; text-align: center; display: flex; justify-content: center; align-items: center;">
-    <h1>My Education</h1>
+    <h1>Education</h1>
   </div>
 
   <!-- Main Container -->

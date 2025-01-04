@@ -3,7 +3,7 @@
     <div class="modal-content">
       <!-- Modal Header with Close Icon -->
       <div class="modal-header">
-        <h3 class="modal-title">Modal Title</h3>
+        <h3 class="modal-title">Job details</h3>
         <button class="close-btn" @click="close">
           &times; <!-- Close icon -->
         </button>
