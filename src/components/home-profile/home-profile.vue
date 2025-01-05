@@ -183,7 +183,7 @@ export default {
       };
     },
     iconChunks() {
-      const chunkSize = 4;
+      const chunkSize = 5;
       const chunks = [];
       for (let i = 0; i < this.skills.length; i += chunkSize) {
         chunks.push(this.skills.slice(i, i + chunkSize));
@@ -366,9 +366,8 @@ img:hover {
   justify-content: center;
   gap: 16px; /* Space between cards */
   padding: 16px;
-  height: 20vh; /* Full viewport height */
-  overflow-y: auto; /* Prevent content overflow */
-  box-sizing: border-box; /* Include padding in height calculation */
+  height: auto; /* Allow container to adjust its height based on content */
+  box-sizing: border-box; /* Include padding in height and width calculations */
 }
 
 /* Individual counter card */
@@ -383,7 +382,7 @@ img:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 120px; /* Ensures proper sizing */
   text-align: center;
-  flex: 1 1 calc(25% - 32px); /* Flexible width for 4 items per row with gaps */
+  flex: 0 0 auto; /* Prevent cards from shrinking or expanding */
   max-width: 250px; /* Optional: limits size */
 }
 
@@ -399,17 +398,18 @@ img:hover {
   color: #555; /* Example text color */
 }
 
-/* Media query for smaller screens (e.g., phones) */
+/* Media query for smaller screens (phones) */
 @media (max-width: 768px) {
   .counter-section {
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Align items from top */
+    flex-direction: column; /* Stack cards vertically */
+    justify-content: flex-start; /* Align items from the top */
+    height: auto; /* Ensure the container height adjusts to the content */
   }
 
   .counter-card {
     width: 100%; /* Make cards take full width */
     max-width: 320px; /* Optional: limits readability width */
-    margin: 0 auto; /* Center the cards horizontally */
+    margin-bottom: 16px; /* Space between cards vertically */
   }
 }
 
