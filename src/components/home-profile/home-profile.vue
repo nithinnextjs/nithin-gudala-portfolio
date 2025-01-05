@@ -63,7 +63,7 @@
       <div class="my-2">
         <h2 class="heading text-center my-4">Work Highlights</h2>
         <div class="counter-section">
-          <div class="counter-card" v-for="counter in counters" :key="counter.id">
+          <div class="counter-card" v-for="counter in counters" :key="counter.id" :style="{ backgroundColor: counter.color }">
           <div class="counter-number">{{ counter.current }} +</div>
          <div class="counter-name">{{ counter.name }}</div>
         </div>
@@ -116,10 +116,10 @@ export default {
       ],
       currentIndex: 0, // Keep track of the current slide
       counters: [
-        { id: 1, target: 25, current: 0, name: 'Projects' },
-        { id: 2, target: 10, current: 0, name: 'Experiences' },
-        { id: 3, target: 500, current: 0, name: 'LinkedIn Connections' },
-        { id: 4, target: 15, current: 0, name: 'Skills' }
+        { id: 1, target: 25, current: 0, name: 'Projects', color:'#fef6e0' },
+        { id: 2, target: 10, current: 0, name: 'Experiences', color:'#e8ebed'},
+        { id: 3, target: 500, current: 0, name: 'LinkedIn Connections', color:'#f0ecf9' },
+        { id: 4, target: 15, current: 0, name: 'Skills', color:'#e7f6f8' }
       ],
       intervalId: null,
       companies: [
@@ -183,7 +183,7 @@ export default {
       };
     },
     iconChunks() {
-      const chunkSize = 4;
+      const chunkSize = 5;
       const chunks = [];
       for (let i = 0; i < this.skills.length; i += chunkSize) {
         chunks.push(this.skills.slice(i, i + chunkSize));
@@ -350,7 +350,7 @@ img:hover {
 
 .section-carousel {
   padding: 40px 0;
-  background-color: #dddcdc;
+  background-color: #fdfdfd85;
 }
 
 .work-highlights {
@@ -366,9 +366,8 @@ img:hover {
   justify-content: center;
   gap: 16px; /* Space between cards */
   padding: 16px;
-  height: 20vh; /* Full viewport height */
-  overflow-y: auto; /* Prevent content overflow */
-  box-sizing: border-box; /* Include padding in height calculation */
+  height: auto; /* Allow container to adjust its height based on content */
+  box-sizing: border-box; /* Include padding in height and width calculations */
 }
 
 /* Individual counter card */
@@ -383,7 +382,7 @@ img:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 120px; /* Ensures proper sizing */
   text-align: center;
-  flex: 1 1 calc(25% - 32px); /* Flexible width for 4 items per row with gaps */
+  flex: 0 0 auto; /* Prevent cards from shrinking or expanding */
   max-width: 250px; /* Optional: limits size */
 }
 
@@ -399,17 +398,18 @@ img:hover {
   color: #555; /* Example text color */
 }
 
-/* Media query for smaller screens (e.g., phones) */
+/* Media query for smaller screens (phones) */
 @media (max-width: 768px) {
   .counter-section {
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Align items from top */
+    flex-direction: column; /* Stack cards vertically */
+    justify-content: flex-start; /* Align items from the top */
+    height: auto; /* Ensure the container height adjusts to the content */
   }
 
   .counter-card {
     width: 100%; /* Make cards take full width */
     max-width: 320px; /* Optional: limits readability width */
-    margin: 0 auto; /* Center the cards horizontally */
+    margin-bottom: 16px; /* Space between cards vertically */
   }
 }
 

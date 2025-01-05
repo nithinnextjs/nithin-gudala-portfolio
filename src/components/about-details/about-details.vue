@@ -1,190 +1,198 @@
 <template>
-  <section id="work-experience">
-    <h2>Work Experience</h2>
-    <div class="experience-list">
-      <div
-        v-for="(experience, index) in workExperiences"
-        :key="index"
-        class="experience-card"
-      >
-        <!-- Card: Two Sections Side by Side -->
-        <div class="card-content">
-          <!-- Left Section: Message (Text) -->
-          <div class="card-text">
-            <h3 class="job-title">{{ experience.title }}</h3>
-            <p class="company-name">{{ experience.company }}</p>
-            <p class="employment-period">{{ experience.period }}</p>
-            <p class="job-description">{{ experience.description }}</p>
+  <div>
+    <section class="custom-section bg-light">
+    <!-- Background Design -->
 
-            <!-- Read More Button -->
-            <button @click="openModal(experience)" class="read-more-btn">Read More</button>
+    <div class="container content-wrapper">
+      <div class="row align-items-center">
+        <!-- Left Side: Framed Image -->
+        <div class="col-lg-6 text-center">
+          <div class="image-frame">
+            <img src="@/assets/development2.jpg" alt="Framed Image">
           </div>
+        </div>
 
-          <!-- Right Section: Image -->
-          <div class="card-image">
-            <img :src="experience.image" alt="Job Image" />
-          </div>
+        <!-- Right Side: Bullet Points -->
+        <div class="col-lg-6">
+          <h2 class="mb-4 headingtwo">About Me</h2>
+          <ul class="bullet-points">
+            <li v-for="(point, index) in bulletPoints" :key="index">
+              {{ point }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-
-    <!-- Custom Modal -->
-    <Modal :is-visible="isModalVisible" @close="closeModal">
-      <div>
-        <h3>{{ selectedExperience?.title }}</h3>
-        <p class="company-name">{{ selectedExperience?.company }}</p>
-        <p class="employment-period">{{ selectedExperience?.period }}</p>
-        <p class="job-description">{{ selectedExperience?.description }}</p>
-        <img :src="selectedExperience?.image" alt="Job Image" class="modal-image" />
-      </div>
-    </Modal>
   </section>
+
+  <section class="custom-section bg-light">
+    <!-- Background Design -->
+
+    <div class="container content-wrapper">
+      <div class="row align-items-center">
+        <!-- Left Side: Framed Image -->
+           <!-- Right Side: Bullet Points -->
+        <div class="col-lg-6">
+          <h2 class="mb-4 headingtwo">Versatility Across Projects</h2>
+          <ul class="bullet-points">
+            <li v-for="(point, index) in bulletPoints3" :key="index">
+              {{ point }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6 text-center">
+          <div class="image-frame">
+            <img src="@/assets/development1.jpg" alt="Framed Image">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </section>
+
+        <section class="custom-section bg-light">
+    <!-- Background Design -->
+
+    <div class="container content-wrapper">
+      <div class="row align-items-center">
+        <!-- Left Side: Framed Image -->
+        <div class="col-lg-6 text-center">
+          <div class="image-frame">
+            <img src="@/assets/aboutmeone.jpg" alt="Framed Image">
+          </div>
+        </div>
+
+        <!-- Right Side: Bullet Points -->
+        <div class="col-lg-6">
+          <h2 class="mb-4 headingtwo">Skills and Expertise</h2>
+          <ul class="bullet-points">
+            <li v-for="(point, index) in skillPoints2" :key="index">
+              {{ point }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="custom-section bg-light">
+    <!-- Background Design -->
+
+    <div class="container content-wrapper">
+      <div class="row align-items-center">
+        <!-- Left Side: Framed Image -->
+           <!-- Right Side: Bullet Points -->
+        <div class="col-lg-6">
+          <h2 class="mb-4 headingtwo">Comprehensive Development Approach</h2>
+          <ul class="bullet-points">
+            <li v-for="(point, index) in bulletPoints4" :key="index">
+              {{ point }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6 text-center">
+          <div class="image-frame">
+            <img src="@/assets/development2.jpg" alt="Framed Image">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </section>
+  </div>
 </template>
 
 <script>
-import Modal from '@/components/modelDetails.vue';
 
 export default {
   name: "AboutDetails",
-  components: {
-    Modal,
-  },
   data() {
     return {
-      isModalVisible: false,
-      selectedExperience: null,
-      workExperiences: [
-        {
-          title: "Frontend Developer",
-          company: "Tech Innovations",
-          period: "Jan 2022 - Present",
-          description: "Developed and maintained responsive websites using Vue.js.",
-          image: "https://via.placeholder.com/400x250?text=Frontend+Developer+Image"
-        },
-        {
-          title: "Web Developer Intern",
-          company: "Creative Solutions",
-          period: "Jun 2021 - Dec 2021",
-          description: "Assisted in building dynamic web applications using HTML, CSS, JavaScript.",
-          image: "https://via.placeholder.com/400x250?text=Web+Developer+Image"
-        },
-        {
-          title: "Full Stack Developer",
-          company: "Future Tech Ltd.",
-          period: "Jan 2020 - May 2021",
-          description: "Worked on developing full-stack applications with Vue.js and Node.js.",
-          image: "https://via.placeholder.com/400x250?text=Full+Stack+Developer+Image"
-        }
+      bulletPoints: [
+        "My name is Nithin Gudala, and I am a seasoned Full Stack Developer with a decade of professional experience in the software development industry.",
+        "I hold a Master’s degree in Information Systems, which provided me with a strong foundation in technology and problem-solving.",
+        "Over the years, I have contributed to diverse industries such as e-commerce, education, healthcare, automotive, transportation, marketing, and other web-based platforms.",
+        "This extensive background has helped me adapt to various business requirements and develop scalable, user-focused applications.",
+        "My expertise lies in transforming ideas into robust, efficient, and visually appealing software solutions."
+      ],
+      skillPoints2: [
+        "With proficiency in modern technologies, I have mastered tools and frameworks essential for full-stack development.",
+        "My skill set includes HTML5, CSS3, Bootstrap (4 and 5), Tailwind CSS, AngularJS, and the latest versions of Angular (6, 10, 13, 14).",
+        " I am also experienced in React.js, Next.js, and Node.js, enabling me to build dynamic and high-performing applications.",
+        "My knowledge extends to front-end frameworks for sleek designs and responsive interfaces, ensuring seamless user experiences.",
+        "Additionally, I am adept at implementing backend functionalities and APIs, delivering end-to-end application development."
+      ],
+      bulletPoints3: [
+        "Throughout my career, I have developed applications for a variety of domains, which enriched my understanding of different workflows and challenges.",
+        "From creating engaging e-commerce platforms to developing interactive educational tools and secure healthcare systems, I have embraced versatility in every project.",
+        " I am proficient in responsive design, integrating APIs, and ensuring cross-browser compatibility.",
+        "My ability to collaborate with diverse teams has enabled me to design innovative solutions tailored to business needs.",
+        "In addition to working across diverse domains, I stay up-to-date with emerging technologies and industry trends.",
+        "Whether it's incorporating AI-driven features, leveraging cloud-based solutions, or optimizing performance for modern frameworks, I am committed to ensuring that the applications I build are future-proof and aligned with the latest advancements"
+      ],
+      bulletPoints4: [
+        "My work is not just limited to coding; I handle the entire lifecycle of software development with precision.",
+        "This includes unit testing, continuous integration/continuous deployment (CI/CD) pipelines, and application deployment.",
+        " I take pride in ensuring that all aspects of the application meet the highest standards of quality and performance.",
+        "My expertise in tools like Sass, Tailwind CSS, and Bootstrap enables me to deliver visually consistent and functional designs.",
+        "This comprehensive approach allows me to support clients at every stage of their application development journey."
       ]
     };
   },
   methods: {
-    openModal(experience) {
-      this.selectedExperience = experience;
-      this.isModalVisible = true;
-    },
-    closeModal() {
-      this.isModalVisible = false;
-    }
+   
   }
 };
 </script>
 
 <style scoped>
 /* Main Section */
-#work-experience {
-  padding: 20px;
-  background-color: #f9f9f9;
+.section{
+ padding:20px;
 }
-
-/* Work Experience List */
-.experience-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px; /* Gap between cards */
-  margin-top: 20px;
-}
-
-/* Experience Card - Two Sections (Message and Image side by side) */
-.experience-card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.custom-section {
+  min-height: 100vh; /* Full viewport height */
   display: flex;
-  flex-direction: row; /* Align sections side by side */
-  overflow: hidden;
-  padding: 20px;
-  transition: transform 0.3s ease;
-}
-
-.experience-card:hover {
-  transform: translateY(-10px);
-}
-
-/* Card Content - Flexbox Layout */
-.card-content {
-  display: flex;
-  justify-content: space-between; /* Space between the text and image sections */
-  width: 100%;
   align-items: center;
+  position: relative;
+  overflow: hidden; /* Ensure no content overflows */
 }
-
-/* Left Section: Message */
-.card-text {
-  flex: 1; /* Take up available space */
-  padding-right: 20px; /* Space between text and image */
+.background-design {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
-
-.job-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 10px;
+.content-wrapper {
+  position: relative;
+  z-index: 3; /* Ensure content is above the background */
 }
-
-.company-name,
-.employment-period {
-  font-size: 1.1em;
-  color: #555;
-  margin-bottom: 5px;
+.image-frame {
+  border: 5px solid #fff; /* Frame border */
+  border-radius: 50%; /* Circular frame */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Frame shadow */
+  overflow: hidden;
+  margin: auto;
 }
-
-.job-description {
-  font-size: 1em;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-/* Right Section: Image */
-.card-image {
-  width: 200px; /* Fixed width for the image */
-}
-
-.card-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.image-frame img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
-
-/* Read More Button */
-.read-more-btn {
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
+.bullet-points {
+  list-style: disc;
+  padding-left: 20px;
 }
-
-.read-more-btn:hover {
-  background-color: #0056b3;
+.bullet-points li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
-
-/* Modal Styling */
-.modal-image {
-  width: 100%;
-  border-radius: 8px;
-  margin-top: 10px;
+.headingtwo {
+  text-align:center;
+  color:#ffc107;
 }
 </style>
