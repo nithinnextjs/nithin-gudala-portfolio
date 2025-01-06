@@ -176,8 +176,14 @@ export default {
       }),
     });
 
-    const data = await response.json();
-    console.log('Form submitted successfully', data);
+      // Check for successful response
+      if (response.ok) {
+      const data = await response.json();
+      console.log('Form submitted successfully', data);
+    } else {
+      const errorData = await response.json();
+      console.error('Server Error:', errorData);
+    }
   } catch (error) {
     console.error('Error submitting form:', error);
   }
