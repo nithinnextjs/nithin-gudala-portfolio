@@ -2,6 +2,8 @@
   base = ""  # Leave this empty if your project is in the root directory
   publish = "dist"  # The folder containing your build output (Vue.js default is dist/)
   command = "npm run build"  # or "yarn build"
+  functions = ".netlify/functions"
+
 
 [[redirects]]
   from = "/*"
