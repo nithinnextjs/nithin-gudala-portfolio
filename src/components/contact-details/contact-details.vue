@@ -158,22 +158,30 @@ export default {
     },
 
     // Handle form submission
-    submitForm() {
-      if (this.validateForm()) {
-        // Simulate API submission
-        setTimeout(() => {
-          this.showSuccess = true;
-          setTimeout(() => {
-            this.showSuccess = false;
-          }, 2000);
-        }, 500);
-      } else {
-        this.showError = true;
-        setTimeout(() => {
-          this.showError = false;
-        }, 2000);
-      }
-    },
+    async submitForm() {
+  try {
+    const response = await fetch('/.netlify/functions/profiles', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstname: this.form.firstName,
+        lastname: this.form.lastName,
+        companyname: this.form.company,
+        contacttype: this.form.contactType,
+        reasonforcontact: this.form.reason,
+        Email: this.form.email,
+        Phonenumber: this.form.phone,
+      }),
+    });
+
+    const data = await response.json();
+    console.log('Form submitted successfully', data);
+  } catch (error) {
+    console.error('Error submitting form:', error);
+  }
+},
 
     // Close modal
     closeModal() {
