@@ -109,6 +109,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: "ContactDetails",
   data() {
@@ -123,6 +125,7 @@ export default {
         company: ''
       },
       errors: {},
+      message: '',
       showSuccess: false,
       showError: false
     };
@@ -159,34 +162,18 @@ export default {
 
     // Handle form submission
     async submitForm() {
-  try {
-    const response = await fetch('/.netlify/functions/profiles', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        firstname: this.form.firstName,
-        lastname: this.form.lastName,
-        companyname: this.form.company,
-        contacttype: this.form.contactType,
-        reasonforcontact: this.form.reason,
-        Email: this.form.email,
-        Phonenumber: this.form.phone,
-      }),
-    });
-
-      // Check for successful response
-      if (response.ok) {
-      const data = await response.json();
-      console.log('Form submitted successfully', data);
-    } else {
-      const errorData = await response.json();
-      console.error('Server Error:', errorData);
-    }
-  } catch (error) {
-    console.error('Error submitting form:', error);
-  }
+      try {
+        // Send the form data to the backend API (Node.js)
+        const response = await axios.post('http://localhost:5000/profiles', this.form);
+        
+        // Handle success
+        this.message = 'Profile successfully submitted!';
+        console.log(response.data); // Response from backend (optional)
+      } catch (error) {
+        // Handle error
+        console.error('There was an error!', error);
+        this.message = 'There was an error submitting your form. Please try again.';
+      }
 },
 
     // Close modal
