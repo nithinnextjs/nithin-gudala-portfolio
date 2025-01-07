@@ -164,7 +164,7 @@ export default {
     async submitForm() {
       try {
         // Send the form data to the backend API (Node.js)
-        const response = await axios.post('http://localhost:5000/profiles', this.form);
+        const response = await axios.post('/api/endpoint', this.form);
         
         // Handle success
         this.message = 'Profile successfully submitted!';
