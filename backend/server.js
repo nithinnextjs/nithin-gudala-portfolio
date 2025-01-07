@@ -101,7 +101,7 @@ app.delete('/deleteprofiles/:id', async (req, res) => {
 
 // Define a simple route
 app.get("/", (req, res) => {
-  res.send("Backend is running successfully");
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start the server
