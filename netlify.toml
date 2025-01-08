@@ -13,5 +13,6 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/:splat"  # This tells Netlify to route API calls to functions
+  to = "https://api.nithingudala.com/api/:splat"
   status = 200
+  force = true
