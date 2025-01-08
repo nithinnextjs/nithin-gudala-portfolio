@@ -111,6 +111,9 @@
 <script>
 import axios from 'axios';
 
+// Set Axios default base URL for production
+axios.defaults.baseURL = 'https://www.nithingudala.com/api'; // Replace with your backend domain
+
 export default {
   name: "ContactDetails",
   data() {
@@ -124,6 +127,7 @@ export default {
         contactType: 'Email',
         company: ''
       },
+      profiles: [], // To store profiles for GET request
       errors: {},
       message: '',
       showSuccess: false,
@@ -159,12 +163,21 @@ export default {
 
       return valid;
     },
-
+    
+        // Fetch all profiles
+        async fetchProfiles() {
+      try {
+        const response = await axios.get('/profiles');
+        this.profiles = response.data;
+      } catch (error) {
+        console.error('Error fetching profiles', error);
+      }
+    },
     // Handle form submission
     async submitForm() {
       try {
         // Send the form data to the backend API (Node.js)
-        const response = await axios.post('/api/endpoint', this.form);
+        const response = await axios.post('/profiles', this.form); // Post to /profiles
         
         // Handle success
         this.message = 'Profile successfully submitted!';
@@ -175,7 +188,9 @@ export default {
         this.message = 'There was an error submitting your form. Please try again.';
       }
 },
-
+mounted() {
+    this.fetchProfiles(); // Fetch profiles when the component is mounted
+  },
     // Close modal
     closeModal() {
       this.showSuccess = false;
