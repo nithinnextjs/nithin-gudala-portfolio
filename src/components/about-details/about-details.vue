@@ -14,7 +14,12 @@
 
         <!-- Right Side: Bullet Points -->
         <div class="col-lg-6">
-          <h2 class="mb-4 headingtwo">About Me</h2>
+          <div class="container mt-5">
+            <h2 class="mb-4 headingtwo text-center">About Me</h2>
+            <hr class="my-4">
+            <div class="text-center fs-3 fw-bold">***</div>
+            <hr class="my-4">
+          </div>
           <ul class="bullet-points">
             <li v-for="(point, index) in bulletPoints" :key="index">
               {{ point }}
