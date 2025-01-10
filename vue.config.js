@@ -4,9 +4,6 @@ module.exports = {
   publicPath: '/',  // Set publicPath to root
   outputDir: 'dist', // Output directory for the build
   assetsDir: 'assets', // Folder for assets
-  devServer: {
-    proxy: 'http://localhost:5000',
-  },
 
   chainWebpack(config) {
     config.plugin('define')
