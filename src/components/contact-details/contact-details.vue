@@ -35,8 +35,8 @@
               <!-- Phone Number -->
               <div class="mb-3">
                 <label for="phone" class="form-label">Phone Number</label>
-                <input type="text" class="form-control" id="phone" v-model="form.phone" required :class="{'is-invalid': errors.phone}">
-                <div v-if="errors.phone" class="invalid-feedback">{{ errors.phone }}</div>
+                <input type="text" class="form-control" id="phone" v-model="form.Phonenumber" required :class="{'is-invalid': errors.Phonenumber}">
+                <div v-if="errors.phone" class="invalid-feedback">{{ errors.Phonenumber }}</div>
               </div>
 
               <!-- Reason for Contact -->
@@ -122,7 +122,7 @@ export default {
         firstname: '',
         lastname: '',
         Email: '',
-        phone: '',
+        Phonenumber: '',
         reason: '',
         contacttype: 'Email',  // Backend expects 'contacttype' (not 'contactType')
         companyname: ''        // Backend expects 'companyname' (not 'company')
@@ -147,8 +147,8 @@ export default {
 
       // Validate phone number (numbers only)
       const phoneRegex = /^[0-9]+$/;
-      if (!this.form.phone || !phoneRegex.test(this.form.phone)) {
-        this.errors.phone = 'Phone number is required and should only contain numbers.';
+      if (!this.form.Phonenumber || !phoneRegex.test(this.form.Phonenumber)) {
+        this.errors.Phonenumber = 'Phone number is required and should only contain numbers.';
         valid = false;
       }
 
