@@ -4,6 +4,7 @@ import AboutDetails from '../components/about-details/about-details.vue';
 import EducationDetails from '../components/education-details/education-details.vue';
 import ExperienceDetails from '../components/experience-details/experience-details.vue';
 import ContactDetails from '../components/contact-details/contact-details.vue';
+import viewContacts from '../components/my-contacts/my-contacts.vue';
 
 // Define your routes
 const routes = [
@@ -12,6 +13,7 @@ const routes = [
   { path: '/education', name: 'EducationDetails', component: EducationDetails },
   { path: '/experience', name: 'ExperienceDetails', component: ExperienceDetails },
   { path: '/contact', name: 'ContactDetails', component: ContactDetails },
+  { path: '/viewcontact', name: 'viewContacts', component: viewContacts },
 ];
 
 // Create a router instance using createRouter

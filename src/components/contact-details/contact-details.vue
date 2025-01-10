@@ -15,20 +15,20 @@
               <!-- First Name -->
               <div class="mb-3">
                 <label for="firstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" v-model="form.firstName" required :class="{'is-invalid': errors.firstName}">
-                <div v-if="errors.firstName" class="invalid-feedback">{{ errors.firstName }}</div>
+                <input type="text" class="form-control" id="firstName" v-model="form.firstname" required :class="{'is-invalid': errors.firstname}">
+                <div v-if="errors.firstname" class="invalid-feedback">{{ errors.firstname }}</div>
               </div>
 
               <!-- Last Name -->
               <div class="mb-3">
                 <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" v-model="form.lastName">
+                <input type="text" class="form-control" id="lastName" v-model="form.lastname">
               </div>
 
               <!-- Email -->
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" v-model="form.email" required :class="{'is-invalid': errors.email}">
+                <input type="email" class="form-control" id="email" v-model="form.Email" required :class="{'is-invalid': errors.email}">
                 <div v-if="errors.email" class="invalid-feedback">{{ errors.email }}</div>
               </div>
 
@@ -48,7 +48,7 @@
               <!-- Preferred Contact Type -->
               <div class="mb-3">
                 <label for="contactType" class="form-label">Preferred Contact Type</label>
-                <select class="form-select" id="contactType" v-model="form.contactType">
+                <select class="form-select" id="contactType" v-model="form.contacttype">
                   <option value="Email">Email</option>
                   <option value="Phone">Phone</option>
                 </select>
@@ -57,7 +57,7 @@
               <!-- Company Name -->
               <div class="mb-3">
                 <label for="company" class="form-label">Company Name</label>
-                <input type="text" class="form-control" id="company" v-model="form.company">
+                <input type="text" class="form-control" id="company" v-model="form.companyname">
               </div>
 
               <!-- Submit Button -->
@@ -112,24 +112,22 @@
 import axios from 'axios';
 
 // Set Axios default base URL for production
-axios.defaults.baseURL = 'https://www.nithingudala.com/api'; // Replace with your backend domain
+axios.defaults.baseURL = 'https://backend-portfolio-7hdl.onrender.com'; // Replace with your backend domain
 
 export default {
   name: "ContactDetails",
   data() {
     return {
       form: {
-        firstName: '',
-        lastName: '',
-        email: '',
+        firstname: '',
+        lastname: '',
+        Email: '',
         phone: '',
         reason: '',
-        contactType: 'Email',
-        company: ''
+        contacttype: 'Email',  // Backend expects 'contacttype' (not 'contactType')
+        companyname: ''        // Backend expects 'companyname' (not 'company')
       },
-      profiles: [], // To store profiles for GET request
       errors: {},
-      message: '',
       showSuccess: false,
       showError: false
     };
@@ -142,8 +140,8 @@ export default {
 
       // Validate first name (no special characters)
       const nameRegex = /^[a-zA-Z ]+$/;
-      if (!this.form.firstName || !nameRegex.test(this.form.firstName)) {
-        this.errors.firstName = 'First name is required and should contain only letters and spaces.';
+      if (!this.form.firstname || !nameRegex.test(this.form.firstname)) {
+        this.errors.firstname = 'First name is required and should contain only letters and spaces.';
         valid = false;
       }
 
@@ -156,41 +154,28 @@ export default {
 
       // Validate email
       const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-      if (!this.form.email || !emailRegex.test(this.form.email)) {
-        this.errors.email = 'Please enter a valid email address.';
+      if (!this.form.Email || !emailRegex.test(this.form.Email)) {
+        this.errors.Email = 'Please enter a valid email address.';
         valid = false;
       }
 
       return valid;
     },
     
-        // Fetch all profiles
-        async fetchProfiles() {
-      try {
-        const response = await axios.get('/profiles');
-        this.profiles = response.data;
-      } catch (error) {
-        console.error('Error fetching profiles', error);
-      }
-    },
     // Handle form submission
     async submitForm() {
-      try {
-        // Send the form data to the backend API (Node.js)
-        const response = await axios.post('/profiles', this.form); // Post to /profiles
-        
-        // Handle success
-        this.message = 'Profile successfully submitted!';
-        console.log(response.data); // Response from backend (optional)
-      } catch (error) {
-        // Handle error
-        console.error('There was an error!', error);
-        this.message = 'There was an error submitting your form. Please try again.';
+      if (this.validateForm()) {
+        try {
+          const response = await axios.post('/profiles', this.form); // Post to /profiles
+          this.showSuccess = true; // Show success modal
+          console.log(response.data); // Response from backend
+        } catch (error) {
+          this.showError = true; // Show error modal
+          console.error('There was an error!', error);
+        }
       }
-},
-mounted() {
-    this.fetchProfiles(); // Fetch profiles when the component is mounted
-  },
+    },
+    
     // Close modal
     closeModal() {
       this.showSuccess = false;
@@ -204,9 +189,9 @@ mounted() {
 /* Custom Styles */
 .banner {
   background-image: url('@/assets/banner_images.jpg');
-    background-size: cover; /* Ensure the image covers the entire div */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent image repetition */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -249,8 +234,8 @@ mounted() {
   }
 }
 
-.btn-submit{
+.btn-submit {
   background-color: #ffc107;
-    color: white;
+  color: white;
 }
 </style>
