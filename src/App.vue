@@ -6,53 +6,57 @@
     <main class="">
       <router-view />
     </main>
-<footer class="px-5 py-5 bg-dark text-warning">
-  <div class="row">
-    <div class="col-6 col-md-2 mb-3">
-      <h5>Section</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">About</a></li>
-      </ul>
-    </div>
-
-    <div class="col-6 col-md-2 mb-3">
-      <h5>Section</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">About</a></li>
-      </ul>
-    </div>
-
-    <div class="col-6 col-md-2 mb-3">
-      <h5>Section</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning">About</a></li>
-      </ul>
-    </div>
-
-    <div class="col-md-5 offset-md-1 mb-3">
-      <form>
-        <h5>Subscribe to our newsletter</h5>
-        <p class="text-center">Monthly digest of what's new and exciting from us.</p>
-        <div class="d-flex flex-column flex-sm-row w-100 gap-2 justify-content-center">
-          <label for="newsletter1" class="visually-hidden">Email address</label>
-          <input id="newsletter1" type="email" class="form-control" placeholder="Email address">
-          <button class="btn btn-warning text-white" type="button">Subscribe</button>
+    <footer class="px-5 py-5 bg-dark text-warning">
+          <div class="row">
+        <!-- Quick Links -->
+        <div class="col-12 col-md-3 mb-3">
+            <h5>Quick Links</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-home me-2"></i>Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-user me-2"></i>About Me</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-briefcase me-2"></i>Experience</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-graduation-cap me-2"></i>Education</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-envelope me-2"></i>Contact Me</a></li>
+            </ul>
         </div>
-      </form>
+
+        <!-- Section -->
+        <div class="col-12 col-md-3 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="mailto:nithin.gudala22@gmail.com" class="nav-link p-0 text-warning"><i class="fas fa-envelope me-2"></i>Email: nithin.gudala22@gmail.com</a></li>
+                <li class="nav-item mb-2"><a href="tel:+16098034040" class="nav-link p-0 text-warning"><i class="fas fa-phone me-2"></i>Phone: 6098034040</a></li>
+                <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/nithin-gudala-8946a0230/" class="nav-link p-0 text-warning" target="_blank"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+                <li class="nav-item mb-2"><a href="https://www.nithingudala.com" class="nav-link p-0 text-warning" target="_blank"><i class="fas fa-briefcase me-2"></i>Portfolio</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-map-marker-alt me-2"></i>Location: Chicago, IL</a></li>
+            </ul>
+        </div>
+
+        <!-- Recent Applications -->
+        <div class="col-12 col-md-3 mb-3">
+            <h5>Recent Applications Worked</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="https://www.hubgroup.com/" class="nav-link p-0 text-warning" target="_blank"><i class="fas fa-briefcase me-2"></i>Hub Group</a></li>
+                <li class="nav-item mb-2"><a href="https://www.ed.gov/" class="nav-link p-0 text-warning" target="_blank"><i class="fas fa-university me-2"></i>U.S. Department of Education</a></li>
+                <li class="nav-item mb-2"><a href="https://www.humana.com/" class="nav-link p-0 text-warning" target="_blank"><i class="fas fa-hospital me-2"></i>Humana</a></li>
+                <li class="nav-item mb-2"><a href="https://www.techgene.com/" class="nav-link p-0 text-warning" target="_blank"><i class="fas fa-cogs me-2"></i>TechGene</a></li>
+                <li class="nav-item mb-2"><a href="https://www.centerwellpharmacy.com/find-a-location" class="nav-link p-0 text-warning" target="_blank"><i class="fas fa-map-marker-alt me-2"></i>CenterWell Pharmacy</a></li>
+            </ul>
+        </div>
+
+        <!-- Downloadable Image Cards -->
+        <div class="col-12 col-md-3 mb-3">
+          <a href="./assets/nithin-visting-card.png" download="nithin-visiting-card.png" class="card text-dark text-decoration-none">
+              <img src="./assets/nithin-visting-card.png" class="card-img-top" alt="Card 1 Image">
+              <div class="card-body">
+                  <p class="card-text">
+                      <i class="fas fa-download"></i> Click to download visiting Card.
+                  </p>
+              </div>
+          </a>
+      </div>
     </div>
-  </div>
+
 
   <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top border-warning">
     <p>&copy; 2024 Company, Inc. All rights reserved.</p>
