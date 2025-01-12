@@ -5,20 +5,10 @@
 
     <div class="container content-wrapper">
       <div class="row align-items-center">
-        <!-- Left Side: Framed Image -->
-        <div class="col-lg-6 text-center">
-          <div class="image-frame">
-            <img src="@/assets/development2.jpg" alt="Framed Image">
-          </div>
-        </div>
-
-        <!-- Right Side: Bullet Points -->
-        <div class="col-lg-6">
+                <!-- Right Side: Bullet Points -->
+          <div class="col-lg-6">
           <div class="container mt-5">
             <h2 class="mb-4 headingtwo text-center">About Me</h2>
-            <hr class="my-4">
-            <div class="text-center fs-3 fw-bold">***</div>
-            <hr class="my-4">
           </div>
           <ul class="bullet-points">
             <li v-for="(point, index) in bulletPoints" :key="index">
@@ -26,6 +16,14 @@
             </li>
           </ul>
         </div>
+
+        <!-- Left Side: Framed Image -->
+        <div class="col-lg-6 text-center">
+          <div class="image-frame">
+            <img src="@/assets/development2.jpg" alt="Framed Image">
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -36,8 +34,15 @@
     <div class="container content-wrapper">
       <div class="row align-items-center">
         <!-- Left Side: Framed Image -->
-           <!-- Right Side: Bullet Points -->
-        <div class="col-lg-6">
+
+        <div class="col-lg-6 text-center">
+          <div class="image-frame">
+            <img src="@/assets/development1.jpg" alt="Framed Image">
+          </div>
+        </div>
+
+         <!-- Right Side: Bullet Points -->
+         <div class="col-lg-6">
           <h2 class="mb-4 headingtwo">Versatility Across Projects</h2>
           <ul class="bullet-points">
             <li v-for="(point, index) in bulletPoints3" :key="index">
@@ -45,12 +50,7 @@
             </li>
           </ul>
         </div>
-
-        <div class="col-lg-6 text-center">
-          <div class="image-frame">
-            <img src="@/assets/development1.jpg" alt="Framed Image">
-          </div>
-        </div>
+        
 
       </div>
     </div>
