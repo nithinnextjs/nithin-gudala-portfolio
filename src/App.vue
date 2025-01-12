@@ -13,10 +13,10 @@
             <h5>Quick Links</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-home me-2"></i>Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-user me-2"></i>About Me</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-briefcase me-2"></i>Experience</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-graduation-cap me-2"></i>Education</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-warning"><i class="fas fa-envelope me-2"></i>Contact Me</a></li>
+                <li class="nav-item mb-2"><a href="//about" class="nav-link p-0 text-warning"><i class="fas fa-user me-2"></i>About Me</a></li>
+                <li class="nav-item mb-2"><a href="/experience" class="nav-link p-0 text-warning"><i class="fas fa-briefcase me-2"></i>Experience</a></li>
+                <li class="nav-item mb-2"><a href="/education" class="nav-link p-0 text-warning"><i class="fas fa-graduation-cap me-2"></i>Education</a></li>
+                <li class="nav-item mb-2"><a href="/contact" class="nav-link p-0 text-warning"><i class="fas fa-envelope me-2"></i>Contact Me</a></li>
             </ul>
         </div>
 
@@ -58,13 +58,8 @@
     </div>
 
 
-  <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top border-warning">
-    <p>&copy; 2024 Company, Inc. All rights reserved.</p>
-    <ul class="list-unstyled d-flex">
-      <li class="ms-3"><a class="link-warning" href="#"><i class="fas fa-file-pdf me-2"></i>PDF</a></li>
-      <li class="ms-3"><a class="link-warning" href="#"><i class="fas fa-file-pdf me-2"></i>PDF</a></li>
-      <li class="ms-3"><a class="link-warning" href="#"><i class="fas fa-file-pdf me-2"></i>PDF</a></li>
-    </ul>
+  <div class="d-flex flex-column flex-sm-row py-4 my-4 text-center border-top border-warning">
+    <p>&copy; 2025 Company, Inc. All rights reserved.</p>
   </div>
 </footer>
 
