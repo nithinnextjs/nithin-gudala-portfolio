@@ -9,7 +9,11 @@
           <!-- Left Side: Card with text -->
           <div class="text-card">
             <h1>Nithin Gudala</h1>
-            <p>Sr. Full stack Developer | Senior Frontend Engineer</p>
+            <br>
+            <p><b>Sr. Full stack Developer | Senior Frontend Engineer</b></p>
+            <br>
+            <p>Building Secure, Scalable, and Stunning Digital Experiences</p>
+            <br>
           </div>
 
           <!-- Right Side: Circular Image -->
@@ -18,6 +22,39 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="developer-banner" style="padding: 50px 20px; background-color: #f9f9f9; text-align: center;">
+  <div class="container" style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center;">
+    <!-- Text Section (Left) -->
+    <div class="text-container left" style="flex: 1; padding: 20px; animation: fadeIn 1.5s ease-in-out;">
+      <h2 style="font-size: 1.5rem; color: #ffc107; margin-bottom: 20px;">
+        Transforming Ideas Into Scalable Digital Solutions
+      </h2>
+      <ul style="font-size: 1.2rem; color: #555; list-style: disc; padding-left: 20px;">
+        <li style="margin-bottom: 15px;">Expertise in cutting-edge technologies to deliver secure and responsive applications.</li>
+        <li style="margin-bottom: 15px;">Tailored solutions to meet unique business needs and challenges.</li>
+        <li style="margin-bottom: 15px;">Committed to creating exceptional digital experiences for users.</li>
+      </ul>
+    </div>
+
+    <!-- Image Section (Center) -->
+    <div class="image-container" style="flex: 1; padding: 20px; animation: slideInFromLeft 1.5s ease-in-out;">
+      <img src="@/assets/development2.jpg" alt="Full Stack Development" style="width: 100%; max-width: 500px; border-radius: 10px;">
+    </div>
+
+    <!-- Text Section (Right) -->
+    <div class="text-container right" style="flex: 1; padding: 20px; animation: fadeIn 2s ease-in-out;">
+      <h2 style="font-size: 1.5rem; color: #ffc107; margin-bottom: 20px;">
+        Innovative Development for Modern Challenges
+      </h2>
+      <ul style="font-size: 1.2rem; color: #555; list-style: disc; padding-left: 20px;">
+        <li style="margin-bottom: 15px;">Delivering scalable, high-performing solutions with a focus on security.</li>
+        <li style="margin-bottom: 15px;">Creating visually stunning and user-friendly interfaces.</li>
+        <li style="margin-bottom: 15px;">Ensuring backend systems are robust and reliable.</li>
+      </ul>
+    </div>
+  </div>
     </section>
 
     <!-- Technologies Section -->
@@ -380,7 +417,7 @@ img:hover {
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 120px; /* Ensures proper sizing */
+  min-width: 180px; /* Ensures proper sizing */
   text-align: center;
   flex: 0 0 auto; /* Prevent cards from shrinking or expanding */
   max-width: 250px; /* Optional: limits size */
@@ -487,4 +524,68 @@ img:hover {
     flex: 1 0 100%; /* 1 item per slide on very small screens */
   }
 }
+
+@keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .image-container {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .text-container {
+      flex: 1;
+      padding: 20px;
+    }
+
+    h2, ul {
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    ul li {
+      color: #7f8c8d;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .text-container, .image-container {
+        flex: none;
+        width: 100%;
+      }
+      .text-container.left {
+        order: 1;
+      }
+      .image-container {
+        order: 2;
+      }
+      .text-container.right {
+        order: 3;
+      }
+    }
 </style>
