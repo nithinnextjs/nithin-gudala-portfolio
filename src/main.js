@@ -9,6 +9,7 @@ import 'bootstrap';
 // Import Font Awesome CSS
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Particles from 'vue3-particles';
 
 
-createApp(App).use(router).mount('#app'); // Create the Vue app, use the router, and mount it to the DOM
+createApp(App).use(router).use(Particles).mount('#app'); // Create the Vue app, use the router, and mount it to the DOM
