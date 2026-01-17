@@ -161,31 +161,37 @@ export default {
       intervalId: null,
       companies: [
         {
+          // @ts-ignore
           image: require("@/assets/humana.jpg"),
           jobTitle: 'Frontend Developer',
           years: '2018 - 2022'
         },
         {
+          // @ts-ignore
           image: require("@/assets/hubgroup.jpg"),
           jobTitle: 'UI/UX Designer',
           years: '2020 - 2024'
         },
         {
+          // @ts-ignore
           image: require("@/assets/educationdept.jpg"),
           jobTitle: 'Software Engineer',
           years: '2017 - 2021'
         },
         {
+          // @ts-ignore
           image: require("@/assets/humana.jpg"),
           jobTitle: 'Frontend Developer',
           years: '2018 - 2022'
         },
         {
+          // @ts-ignore
           image: require("@/assets/hubgroup.jpg"),
           jobTitle: 'UI/UX Designer',
           years: '2020 - 2024'
         },
         {
+          // @ts-ignore
           image: require("@/assets/educationdept.jpg"),
           jobTitle: 'Software Engineer',
           years: '2017 - 2021'
@@ -591,13 +597,9 @@ img:hover {
 
     /* Responsive Design */
     @media (min-width: 1400px) {
-      .container {
+      .section-carousel, .container {
         flex-direction: column;
         width:100% !important
-      }
-      .text-container, .image-container {
-        flex: none;
-        width: 100%;
       }
     }
 </style>
