@@ -149,7 +149,9 @@ export default {
         { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg' },
         { name: 'Azure', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/azure.svg' },
         { name: 'AWS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/amazonaws.svg' },
-        { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/mongodb.svg' }
+        { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/mongodb.svg' },
+        { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/html5.svg' },
+        { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/css3.svg' },
       ],
       currentIndex: 0, // Keep track of the current slide
       counters: [
@@ -169,13 +171,13 @@ export default {
         {
           // @ts-ignore
           image: require("@/assets/hubgroup.jpg"),
-          jobTitle: 'UI/UX Designer',
+          jobTitle: 'Full Stack developer',
           years: '2020 - 2024'
         },
         {
           // @ts-ignore
           image: require("@/assets/educationdept.jpg"),
-          jobTitle: 'Software Engineer',
+          jobTitle: 'Full Stack developer',
           years: '2017 - 2021'
         },
         {
@@ -186,13 +188,13 @@ export default {
         },
         {
           // @ts-ignore
-          image: require("@/assets/hubgroup.jpg"),
+          image: require("@/assets/techgene.png"),
           jobTitle: 'UI/UX Designer',
           years: '2020 - 2024'
         },
         {
           // @ts-ignore
-          image: require("@/assets/educationdept.jpg"),
+          image: require("@/assets/mantio.png"),
           jobTitle: 'Software Engineer',
           years: '2017 - 2021'
         }
