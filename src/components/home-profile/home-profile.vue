@@ -59,7 +59,7 @@
 
     <!-- Technologies Section -->
     <section class="section-carousel">
-      <div class="container my-4" style="width: 100% !important;">
+      <div class="my-4">
         <h2 class="heading text-center my-4">Technologies That Power My Work</h2>
         <div id="skillsCarousel" class="carousel slide">
           <div class="carousel-inner">
