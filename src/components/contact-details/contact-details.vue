@@ -80,11 +80,11 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Success!</h5>
+            <h5 class="modal-title" style="color: green; font-size: 14px;">Success!</h5>
             <button type="button" class="btn-close" @click="closeModal"></button>
           </div>
           <div class="modal-body">
-            <p>Your form has been submitted successfully!</p>
+            <p style="color: black; font-size: 12px;">Your form has been submitted successfully!</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" @click="closeModal">
@@ -178,7 +178,7 @@ export default {
           console.log(response.data); // Response from backend
         } catch (error) {
           this.showError = true; // Show error modal
-          console.error('There was an error!', error);
+          console.error('There was an error for submiting!', error);
         }
       }
     },
@@ -187,6 +187,20 @@ export default {
     closeModal() {
       this.showSuccess = false;
       this.showError = false;
+
+       // ✅ Clear form
+  this.form = {
+    firstname: '',
+    lastname: '',
+    Email: '',
+    Phonenumber: '',
+    reason: '',
+    contacttype: 'Email',
+    companyname: ''
+  };
+
+  // ✅ Clear validation errors
+  this.errors = {};
     }
   }
 };
