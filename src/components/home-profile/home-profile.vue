@@ -59,7 +59,7 @@
 
     <!-- Technologies Section -->
     <section class="section-carousel">
-      <div class="container my-4">
+      <div class="container my-4" style="width: 100% !important;">
         <h2 class="heading text-center my-4">Technologies That Power My Work</h2>
         <div id="skillsCarousel" class="carousel slide">
           <div class="carousel-inner">
@@ -592,14 +592,6 @@ img:hover {
       }
       .text-container.right {
         order: 3;
-      }
-    }
-
-    /* Responsive Design */
-    @media (min-width: 1400px) {
-      .section-carousel, .container {
-        flex-direction: column;
-        width:100% !important
       }
     }
 </style>
