@@ -588,4 +588,16 @@ img:hover {
         order: 3;
       }
     }
+
+    /* Responsive Design */
+    @media (min-width: 1400px) {
+      .container {
+        flex-direction: column;
+        width:100% !important
+      }
+      .text-container, .image-container {
+        flex: none;
+        width: 100%;
+      }
+    }
 </style>
