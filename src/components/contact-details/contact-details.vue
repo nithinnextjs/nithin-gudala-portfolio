@@ -71,7 +71,12 @@
     </div>
 
     <!-- Success Modal -->
-    <div class="modal" tabindex="-1" v-if="showSuccess">
+    <div
+      class="modal show d-block"
+      tabindex="-1"
+      v-if="showSuccess"
+      style="background: rgba(0,0,0,0.5);"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -82,7 +87,9 @@
             <p>Your form has been submitted successfully!</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" @click="closeModal">Close</button>
+            <button type="button" class="btn btn-primary" @click="closeModal">
+              Close
+            </button>
           </div>
         </div>
       </div>
