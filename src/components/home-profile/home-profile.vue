@@ -169,7 +169,7 @@ export default {
       intervalId: null,
       companies: [
         {
-          image: require("@/assets/logo.png"),
+          image: require("@/assets/State-Farm.png"),
           jobTitle: 'Senior Full Stack Developer | DevOps',
           years: 'May 20, 2026 - Present',
         },

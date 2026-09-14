@@ -81,7 +81,7 @@ export default {
             <p>&#9679; Collaborating with product owners, designers, developers, QA engineers, and platform teams to deliver reliable business solutions.</p>
             <p>&#9679; Supporting secure development practices, source control workflows, release coordination, and production troubleshooting.</p>
           `,
-          image: require("@/assets/logo.png"),
+          image: require("@/assets/State-Farm.png"),
         },
         {
           title: "Sr. Full Stack Developer",
