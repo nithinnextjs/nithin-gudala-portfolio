@@ -67,6 +67,23 @@ export default {
       selectedExperience: null,
       workExperiences: [
         {
+          title: "Senior Full Stack Developer",
+          company: "State Farm Inc.",
+          period: "May 20, 2026 - Present",
+          description: "Building and supporting secure, scalable web applications across the full software development lifecycle, with a focus on frontend engineering, backend services, cloud delivery, and DevOps automation.",
+          modeldescription: `
+            <p>&#9679; Developing responsive, accessible user interfaces and reusable components with modern JavaScript frameworks.</p>
+            <p>&#9679; Designing and integrating backend services, REST APIs, data access layers, and third-party integrations.</p>
+            <p>&#9679; Applying software engineering practices including code reviews, automated testing, debugging, and performance optimization.</p>
+            <p>&#9679; Building and maintaining CI/CD pipelines with GitHub Actions, Jenkins, and Azure DevOps to automate build, test, and deployment workflows.</p>
+            <p>&#9679; Packaging applications with Docker and supporting containerized deployments in cloud environments.</p>
+            <p>&#9679; Working with Azure and AWS services, infrastructure configuration, monitoring, logging, and environment management.</p>
+            <p>&#9679; Collaborating with product owners, designers, developers, QA engineers, and platform teams to deliver reliable business solutions.</p>
+            <p>&#9679; Supporting secure development practices, source control workflows, release coordination, and production troubleshooting.</p>
+          `,
+          image: require("@/assets/logo.png"),
+        },
+        {
           title: "Sr. Full Stack Developer",
           company: "Hub Group",
           period: "May 2024 - Present",
