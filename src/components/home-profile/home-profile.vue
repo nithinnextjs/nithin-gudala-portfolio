@@ -149,6 +149,12 @@ export default {
         { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg' },
         { name: 'Azure', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/azure.svg' },
         { name: 'AWS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/amazonaws.svg' },
+        { name: 'Azure DevOps', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/azuredevops.svg' },
+        { name: 'Docker', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/docker.svg' },
+        { name: 'Kubernetes', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/kubernetes.svg' },
+        { name: 'Jenkins', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/jenkins.svg' },
+        { name: 'Terraform', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/terraform.svg' },
+        { name: 'CI/CD', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/githubactions.svg' },
         { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/mongodb.svg' },
         { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/html5.svg' },
         { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/css3.svg' },
@@ -162,6 +168,11 @@ export default {
       ],
       intervalId: null,
       companies: [
+        {
+          image: require("@/assets/logo.png"),
+          jobTitle: 'Senior Full Stack Developer | DevOps',
+          years: 'May 20, 2026 - Present',
+        },
         {
           // @ts-ignore
           image: require("@/assets/humana.jpg"),
